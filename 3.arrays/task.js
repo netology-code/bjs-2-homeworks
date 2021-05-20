@@ -7,9 +7,9 @@ function compareArrays(arr1, arr2) {
 }
 
 function advancedFilter(arr) {
-  let arr;
+  let resultArr;
 
   // Ваш код
 
-  return arr;
+  return resultArr; // array
 }
