@@ -2,7 +2,7 @@
 function getArrayParams(arr) {
   let min,max,sum,avg;
 
-  // Ваш код
+  123
 
   return { min:min, max:max, avg:avg };
 }
@@ -11,7 +11,7 @@ function getArrayParams(arr) {
 function worker(arr) {
   let sum;
 
-  // Ваш код
+  123
 
   return sum;
 }
@@ -19,7 +19,7 @@ function worker(arr) {
 function makeWork(arrOfArr, func) {
   let max
 
-  // Ваш кода
+  123
   // for ...
   
   return max
