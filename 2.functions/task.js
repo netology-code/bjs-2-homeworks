@@ -24,3 +24,8 @@ function makeWork(arrOfArr, func) {
   
   return max
 }
+
+// Задание 3
+function worker2(arr) {
+  // Ваш код
+}

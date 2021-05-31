@@ -116,6 +116,10 @@ console.log("Количество книг после выдачи: " + library.
 ### Пример
 
 ```js
+class Student {
+    // ваш код
+}
+
 const student = new Student('Олег Никифоров');
 student.addMark('algebra',5);
 student.addMark('algebra',5);
