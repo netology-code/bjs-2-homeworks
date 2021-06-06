@@ -4,8 +4,8 @@ function Student(name, gender, age) {
   this.age = age;
 }
 
-let student1 = new Student("Tony", "male", 37);
-let student2 = new Student("Buzz", "female", 35);
+let student1 = new Student();
+let student2 = new Student();
 let student3 = new Student();
 
 Student.prototype.setSubject = function (subjectName) {
