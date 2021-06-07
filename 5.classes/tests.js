@@ -104,32 +104,28 @@ describe('Домашнее задание к занятию 2.3 «ООП в JS (
   })
 
   describe('Задача №3', () => {
-    let studentLog;
+    let student;
   
     beforeEach(function(){
-      studentLog = new StudentLog("Иван Петров");
+      student = new Student("Иван Петров");
     });
 
-    it('создание объекта StudentLog', () => {
-      expect(studentLog).toBeDefined();
+    it('создание объекта Student', () => {
+      expect(student).toBeDefined();
     });
-  
-    it('получение имени студента', () => {
-      expect(studentLog.getName()).toEqual("Иван Петров");
-    });
-  
+ 
     it('подсчёт средней оценки по предмету', () => {
-      studentLog.addGrade(3, "algebra");
-      studentLog.addGrade(5, "algebra");
-      expect(studentLog.getAverageBySubject("algebra")).toEqual(4);
+      student.addGrade(3, "algebra");
+      student.addGrade(5, "algebra");
+      expect(student.getAverageBySubject("algebra")).toEqual(4);
     });
   
     it('подсчёт общей средней оценки', () => {
-      studentLog.addGrade(3, "algebra");
-      studentLog.addGrade(5, "algebra");
-      studentLog.addGrade(5, "history");
-      studentLog.addGrade(5, "history");
-      expect(studentLog.getTotalAverage()).toEqual(4.5);
+      student.addGrade(3, "algebra");
+      student.addGrade(5, "algebra");
+      student.addGrade(5, "history");
+      student.addGrade(5, "history");
+      expect(student.getAverage()).toEqual(4.5);
     });
   });
 });
