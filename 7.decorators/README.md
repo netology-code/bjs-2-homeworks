@@ -19,7 +19,7 @@
 
 ```javascript
 const addThree = (a, b, c) => (a + b + c); 
-const upgradedAddThree = decorator(addThree);
+const upgradedAddThree = cachingDecoratorNew(addThree);
 upgradedAddThree(1, 2, 3); // вычисляем: 6
 upgradedAddThree(1, 2, 3); // из кэша: 6
 upgradedAddThree(2, 2, 3); // вычисляем: 7
@@ -28,44 +28,35 @@ upgradedAddThree(4, 2, 3); // вычисляем: 9
 upgradedAddThree(5, 2, 3); // вычисляем: 10
 upgradedAddThree(6, 2, 3); // вычисляем: 11   (при этом кэш для 1, 2, 3 уничтожается)
 upgradedAddThree(1, 2, 3); // вычисляем: 6  (снова вычисляем, кэша нет)
-
-
 ```
 
 ### Задача 2. Фильтрация и преобразование массива
 
-Создайте функцию `_advancedFilter( arr )_`, которая отбирает из массива чисел только положительные числа, кратные 3 и возвращает новый массив с отобранными числами, умноженными на 10. Для этого к исходному массиву примените метод `filter`. Можно 2 раза, сначала отобрать только положительные числа, затем только кратные 3. Затем использовать метод `map`, чтобы умножить полученные значения на 10. В задаче следует пользоваться методами массива, а не циклом `for`.
+Усовершенствуйте рассмотренный на лекции debounce декоратор таким образом, чтобы первый его вызов происходил моментально а следующий не раньше чем через интервал времени, причем интервал должен задаваться в момент применения декоратора к функции. Такой декоратор в называется "Leading edge" или "immediate" (немедленный). Такой декоратор применяется если события, например отправка информации, происходит слишком часто. 
+[![debounce-leading.png](https://i2.wp.com/css-tricks.com/wp-content/uploads/2016/04/debounce-leading.png)]
 
-```js
-let result = arr.filter(...).filter(...).map(...)
-```
 
-Пример вызова
+<details> 
+  <summary>Подсказка 1</summary>
+  Вызывайте переданную функцию немедленно и взводите флаг.    
+</details>
+
+<details> 
+  <summary>Подсказка 2</summary>
+  Используйте setTimeout для снятия флага и при каждом вызове проверяйте, взведен ли он.
+</details>
 
 ```javascript
-compareArrays([-1, -9, 1, 6], [60]) // false, разные значения
-compareArrays([8, 9, 5, 4], [8, 9, 5, 4, 8, 3, 5]) // false, разные значения
-compareArrays([9, 2, 4, 8, 2], [9, 2, 4]) // false, разные значения
-compareArrays([1, 2, 3], [2, 3, 1]) // false, разные индексы, хотя и одинаковые значения
-compareArrays([8, 1, 2], [8, 1, 2]) // true
+const sendSignal = () => console.log('Сигнал послан'); 
+const upgradedSendSignal = debounceDecoratorNew(sendSignal,2000);
+setTimeout(upgradedSendSignal()); // Сигнал отправлен
+setTimeout(upgradedSendSignal(),300); // проигнорировано
+setTimeout(upgradedSendSignal(),900); // проигнорировано
+setTimeout(upgradedSendSignal(),1200); // проигнорировано
+setTimeout(upgradedSendSignal(),2300); // Сигнал отправлен
+setTimeout(upgradedSendSignal(),4400); // Сигнал отправлен
+setTimeout(upgradedSendSignal(),4500); // проигнорировано
 ```
-
-### Процесс реализации:
-
-1. Напишите функцию `compareArrays`
-
-   - Аргументами функции являются два массива.
-
-   - Сначала следует сравнить длины массивов и если они разные возвращать false
-
-   - Затем пройти по первому массиву функцией 
-   ```javascript
-      every( (item,idx)=> {
-
-     // тут код сравнения, item
-
-     })```
-
 ## Требования для выполнения домашней работы
 
 - браузер;
