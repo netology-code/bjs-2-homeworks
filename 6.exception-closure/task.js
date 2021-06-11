@@ -1,7 +1,7 @@
 "use strict";
 
 const parseCount = (value) => {
-  const result = Number.parseInt(value);
+  const result = Number.parseInt(value, 10);
   if (result) {
     return result;
   } else {
