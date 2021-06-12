@@ -21,14 +21,12 @@ function cachingDecoratorNew(func) {
 }
 
 function debounceDecoratorNew(func, ms) {
-  let timerID;
   let flag = false;
   return function () {
     if (!flag) {
-      clearTimeout(timerID);
       func();
       flag = true;
-      timerID = setTimeout(() => (flag = false), ms);
+      setTimeout(() => (flag = false), ms);
     } else {
       return;
     }
@@ -36,16 +34,14 @@ function debounceDecoratorNew(func, ms) {
 }
 
 function debounceDecorator2(func, ms) {
-  let timerID;
   let flag = false;
   wrapper.count = 0;
   function wrapper() {
     if (!flag) {
       ++wrapper.count;
-      clearTimeout(timerID);
       func();
       flag = true;
-      timerID = setTimeout(() => (flag = false), ms);
+      setTimeout(() => (flag = false), ms);
     } else {
       return;
     }
