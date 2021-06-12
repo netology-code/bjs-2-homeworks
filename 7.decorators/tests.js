@@ -1,33 +1,34 @@
-describe("Домашнее задание к занятию 3 «Массивы»", () => {
-  describe("Задача №1 Сравнить массивы", () => {
-    it("[1,2,3] === [1,2,3]  true", () => {
-      expect(compareArrays([1, 2, 3], [1, 2, 3])).toEqual(true)
-    })
+  describe("Домашнее задание к занятию 7 «Функции декораторы»", () => {
+  describe("Задача №1 Усовершенствованный кэширующий декоратор", () => {
+    let add2 = (a, b) => a + b;
+    let add3 = (a, b, c) => a + b + c;
+    let upgAdd2 = cachingDecoratorNew(add2);
+    let upgAdd3 = cachingDecoratorNew(add3);
+    
+    it("Декоратор кэширует", () => {
+      expect(upgAdd2(1, 2)).toEqual("Вычисляем: 3");
+      expect(upgAdd2(1, 2)).toEqual("Из кэша: 3");
+      expect(upgAdd2(1, 2)).toEqual("Из кэша: 3");
 
-    it("[1,2,3] === [1,2,3] false", () => {
-      expect(compareArrays([1, 2], [1, 2, 3])).toEqual(false)
-    })
+    });
 
-    it("[1,2,3] === [3,2,1] false", () => {
-      expect(compareArrays([1, 2, 3], [3, 2, 1])).toEqual(false)
-    })
+    it("Декоратор кеширует функцию 3х переменных", () => {
+      expect(upgAdd3(1, 2, 3)).toEqual("Вычисляем: 6");
+      expect(upgAdd3(1, 2, 3)).toEqual("Из кэша: 6");
+      expect(upgAdd3(1, 2, 3)).toEqual("Из кэша: 6");
+    });
 
-    it("[0,1,2] === [0, 1 ] false", () => {
-      expect(compareArrays([1, 2, 3], [3, 2, 1])).toEqual(false)
-    })
-    it("[1, 2 ] === [1,2,3] false", () => {
-      expect(compareArrays([8, 9, 5, 4], [8, 9, 5, 4, 8, 3, 5])).toEqual(false)
-    })
-  })
-  describe("Задача №2 Фильтрация и преобразование массива", () => {
-    it("[-1,6,-9,3] => [60,30]", () => {
-      expect(advancedFilter([-1, 6, -9, 3])).toEqual([60, 30])
-    })
-    it("[-10,-21,12,123] => [120, 1230]  true", () => {
-      expect(advancedFilter([-10, -21, 12, 123])).toEqual([120, 1230])
-    })
-    it("[-1,-2] => []  true", () => {
-      expect(advancedFilter([-1, -2])).toEqual([])
-    })
-  })
-})
+    it("Декоратор кеширует только 5 значений", () => {
+      expect(upgAdd3(1, 2, 4)).toEqual("Вычисляем: 7");
+      expect(upgAdd3(1, 2, 5)).toEqual("Вычисляем: 8");
+      expect(upgAdd3(1, 2, 6)).toEqual("Вычисляем: 9");
+      expect(upgAdd3(1, 2, 7)).toEqual("Вычисляем: 10");
+      expect(upgAdd3(1, 2, 8)).toEqual("Вычисляем: 11");
+      expect(upgAdd3(1, 2, 8)).toEqual("Из кэша: 11");
+      expect(upgAdd3(1, 2, 3)).toEqual("Вычисляем: 6");
+    });
+
+
+
+  });
+});
