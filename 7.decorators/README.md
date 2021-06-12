@@ -79,13 +79,13 @@ setTimeout(upgradedSendSignal(),4500); // проигнорировано
 ```javascript
 const sendSignal = () => console.log('Сигнал послан'); 
 const upgradedSendSignal = debounceDecorator2(sendSignal,2000);
-setTimeout(upgradedSendSignal()); // Сигнал отправлен
-setTimeout(upgradedSendSignal(),300); // проигнорировано
-setTimeout(upgradedSendSignal(),900); // проигнорировано
-setTimeout(upgradedSendSignal(),1200); // проигнорировано
-setTimeout(upgradedSendSignal(),2300); // Сигнал отправлен
-setTimeout(upgradedSendSignal(),4400); // Сигнал отправлен
-setTimeout(upgradedSendSignal(),4500); // проигнорировано
+setTimeout(upgradedSendSignal); // Сигнал отправлен
+setTimeout(upgradedSendSignal,300); // проигнорировано
+setTimeout(upgradedSendSignal,900); // проигнорировано
+setTimeout(upgradedSendSignal,1200); // проигнорировано
+setTimeout(upgradedSendSignal,2300); // Сигнал отправлен
+setTimeout(upgradedSendSignal,4400); // Сигнал отправлен
+setTimeout(upgradedSendSignal,4500); // проигнорировано
 upgradedSendSignal.count; // 3
 ```
 
