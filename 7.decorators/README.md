@@ -48,7 +48,7 @@ cash = [
 
 <details> 
   <summary>Подсказка 4</summary>
-  Данный код мог бы служить базой для решения. Но всё равно остаётся место для подумать:
+  Данный код мог бы служить базой для решения, но всё равно остаётся место для подумать:
   
   ```js
   function cachingDecoratorNew(func) {
@@ -64,7 +64,7 @@ cash = [
           let result = func(...args); // в кэше результата нет - придётся считать
           cache.push(???) ; // добавляем элемент с правильной структурой
           if (cache.length > 5) { 
-            ??? // если слишком много элементов в кэше надо удалить самый старый (первый)
+            ??? // если слишком много элементов в кэше надо удалить самый старый (первый) 
           }
           console.log("Вычисляем: " + result);
           return "Вычисляем: " + result;  
@@ -78,9 +78,7 @@ cash = [
 </details>
 
 
-
-
-
+#### Какого результата мы хотели бы достичь:
 
 ```javascript
 const addThree = (a, b, c) => a + b + c;
@@ -132,18 +130,6 @@ setTimeout(upgradedSendSignal, 4500); // проигнорировано анал
   Добавьте к обертке wrapper новое свойство count в котором храните количество вызовов.
 </details>
 
-```javascript
-const sendSignal = () => console.log("Сигнал послан");
-const upgradedSendSignal = debounceDecorator2(sendSignal, 2000);
-setTimeout(upgradedSendSignal); // Сигнал отправлен
-setTimeout(upgradedSendSignal, 300); // проигнорировано
-setTimeout(upgradedSendSignal, 900); // проигнорировано
-setTimeout(upgradedSendSignal, 1200); // проигнорировано
-setTimeout(upgradedSendSignal, 2300); // Сигнал отправлен
-setTimeout(upgradedSendSignal, 4400); // Сигнал отправлен
-setTimeout(upgradedSendSignal, 4500); // проигнорировано
-upgradedSendSignal.count; // 3
-```
 
 ## Требования для выполнения домашней работы
 
