@@ -27,8 +27,6 @@ function debounceDecoratorNew(func, ms) {
       func();
       flag = true;
       setTimeout(() => (flag = false), ms);
-    } else {
-      return;
     }
   };
 }
@@ -42,8 +40,6 @@ function debounceDecorator2(func, ms) {
       func();
       flag = true;
       setTimeout(() => (flag = false), ms);
-    } else {
-      return;
     }
   }
   return wrapper;
