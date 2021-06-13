@@ -1,7 +1,14 @@
+@font-face {
+  font-family: Golos;
+  src: url('../fonts/Golos-Text/Golos-Text_Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: Golos, Arial, sans-serif;
   background-color: #f6f8f9;
 }
 
@@ -10,6 +17,7 @@ input {
   display: block;
   padding: 10px 20px;
   margin: 0 0 20px 0;
+  font-family: Golos, Arial, sans-serif;
   border: 1px solid #e2e2e2;
   box-sizing: border-box;
 }
@@ -64,7 +72,12 @@ input:focus {
   border-radius: 5px;
 }
 
+.card-wide {
+  width: 100%;
+}
+
 button {
+  font-family: Golos, Arial, sans-serif;
   color: #fff;
   background-color: #06f;
   border: 1px solid transparent;
