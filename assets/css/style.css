@@ -1,0 +1,103 @@
+@font-face {
+  font-family: Golos;
+  src: url('../fonts/Golos-Text/Golos-Text_Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Golos, Arial, sans-serif;
+  background-color: #f6f8f9;
+}
+
+input {
+  width: 100%;
+  display: block;
+  padding: 10px 20px;
+  margin: 0 0 20px 0;
+  font-family: Golos, Arial, sans-serif;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+}
+
+input:focus {
+    outline: 1px solid #999
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header__title {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+.logo__container {
+  width: 144px;
+  margin-right: 50px;
+}
+
+.logo__link {
+  width: 144px;
+  height: 20px;
+  display: block;
+  background-image: url("../img/logo-color-text_6748e2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  background-color: #f6f8f9;
+}
+
+.card {
+  width: 400px;
+  padding: 20px 30px;
+  margin: 0 auto 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.card-wide {
+  width: 100%;
+}
+
+button {
+  font-family: Golos, Arial, sans-serif;
+  color: #fff;
+  background-color: #06f;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 0 20px 0;
+  overflow: hidden;
+  outline: none;
+  padding: 8px 12px;
+  text-align: center;
+  transition: 0.3s ease;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+button:hover {
+  background-color: #005ce6;
+}
