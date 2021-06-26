@@ -6,14 +6,11 @@ function solveEquation(a, b, c) {
       x1, x2,
       D = Math.pow(b, 2) - 4 * a * c;
 
-  if(D < 0) {
-    return arr;
-
-  } else if (D === 0) {
+  if (D === 0) {
     x1 = -b/(2*a);
     arr.push(x1);
 
-  } else {
+  } else if (D > 0) {
     x1 = (-b + Math.sqrt(D) ) / (2 * a);
     x2 = (-b - Math.sqrt(D) ) / (2 * a);
     arr.push(x1, x2);
@@ -60,7 +57,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 
   totalAmount = parseFloat(totalAmount);
 
-  console.log('Общий платёж: ' + typeof totalAmount);
+  console.log('Общий платёж: ' + totalAmount);
 
   return totalAmount;
 }
