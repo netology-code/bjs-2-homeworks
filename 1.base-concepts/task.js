@@ -2,14 +2,14 @@
 
 function solveEquation(a, b, c) {
 
-  let arr = new Array(),
+  let arr = [],
       x1, x2,
       D = Math.pow(b, 2) - 4 * a * c;
 
   if(D < 0) {
     return arr;
 
-  } else if (D == 0) {
+  } else if (D === 0) {
     x1 = -b/(2*a);
     arr.push(x1);
 
