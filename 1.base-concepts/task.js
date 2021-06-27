@@ -24,7 +24,7 @@ function solveEquation(a, b, c) {
       break;
   }
 
-  return arr;
+  return arr; 
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
@@ -47,7 +47,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     return(`Параметр "Общая стоимость" содержит неправильное значение "${amount}"`);
   }
 
-  loanBody       = amount - contribution;\
+  loanBody       = amount - contribution;
   loanInterest   = (percent / 100) / 12;
   monthlyPayment = loanBody * (loanInterest + loanInterest / (Math.pow((1 + loanInterest), numberOfMonths) - 1));
   
@@ -59,5 +59,5 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 }
 
 function monthDiff(dateFrom, dateTo) {
- return dateTo.getMonth() - dateFrom.getMonth() + (12 * (dateTo.getFullYear() - dateFrom.getFullYear()));
+  return dateTo.getMonth() - dateFrom.getMonth() + (12 * (dateTo.getFullYear() - dateFrom.getFullYear()));
 }
