@@ -6,9 +6,6 @@ function solveEquation(a, b, c) {
     D = Math.pow(b, 2) - 4 * a * c;
 
   switch (true) {
-    case D < 0:
-      arr = [];
-      break;
     case D === 0:
       result = -b / (2 * a);
       arr.push(result);
@@ -18,9 +15,6 @@ function solveEquation(a, b, c) {
       arr.push(result);
       result = (-b - Math.sqrt(D)) / (2 * a);
       arr.push(result);
-      break;
-    default:
-      arr = [];
       break;
   }
 
