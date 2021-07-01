@@ -13,7 +13,7 @@ describe("Домашнее задание к занятию 3 «Массивы»
     })
 
     it("[0,1,2] === [0, 1] false", () => {
-      expect(compareArrays([0,1,2] === [0, 1])).toEqual(false)
+      expect(compareArrays([0,1,2], [0, 1])).toEqual(false)
     })
     it("[8, 9, 5, 4], [8, 9, 5, 4, 8, 3, 5] false", () => {
       expect(compareArrays([8, 9, 5, 4], [8, 9, 5, 4, 8, 3, 5])).toEqual(false)
