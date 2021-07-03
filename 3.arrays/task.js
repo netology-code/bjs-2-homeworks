@@ -56,20 +56,14 @@ getValuestCountToSumValues([1,2,3,5,2,7,3,5,2], 20);
 *
 * */
 
-function getValuesCountToSumValues(arr, sum) {
+function  getValuesCountToSumValues(arr, sum) {
 
-  if(Array.isArray(arr) && Number.isInteger(sum)) {
+  arr.reduce((acc, el, i) => {
 
-    arr.reduce((acc, el) => {
-      acc++;
-      console.log('el ' + el);
-      console.log('acc ' + acc);
-    }, 0);
+    return (acc.counter + el) >= sum ? acc.counter = i + 1 : acc.sum + el;
 
-  } else {
-    return;
-  }
+  }, {"counter": 0, "sum": 0});
+
 }
 
-console.log('Mine');
 console.log(getValuesCountToSumValues([1,2,3,5,2,7,3,5,2], 10));
