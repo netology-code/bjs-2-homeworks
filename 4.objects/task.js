@@ -22,7 +22,6 @@ Student.prototype.addMark = function (mark) {
 }
 
 Student.prototype.addMarks = function (...marks) {
-  console.log(marks);
   marks.forEach(el => this.addMark(el));
 }
 
