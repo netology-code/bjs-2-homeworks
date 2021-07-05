@@ -58,11 +58,11 @@ getValuestCountToSumValues([1,2,3,5,2,7,3,5,2], 20);
 
 function  getValuesCountToSumValues(arr, sum) {
 
-  arr.reduce((acc, el, i) => {
+  return arr.reduce((acc, el, i) => {
 
-    return (acc.counter + el) >= sum ? acc.counter = i + 1 : acc.sum + el;
+    return (acc.total >= sum) ? acc : { counter: acc.counter + 1, total: acc.total + el };
 
-  }, {"counter": 0, "sum": 0});
+  }, {total: 0, counter: 0}).counter;
 
 }
 
