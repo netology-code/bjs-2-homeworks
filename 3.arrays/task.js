@@ -13,3 +13,9 @@ function advancedFilter(arr) {
     .map((item) => item * 10);
 }
 
+function getValuestCountToSumValues(arr, sum) {
+   return arr.reduce((accum, item) => accum.total >= sum ? accum : { counter: accum.counter + 1, total: accum.total + item }, {total: 0, counter: 0}).counter;
+}
+
+console.log(getValuestCountToSumValues([1,2,3,5,2,7,3,5,2], 10));
+console.log(getValuestCountToSumValues([1,2,3,5,2,7,3,5,2], 20));
