@@ -107,7 +107,11 @@ class Student {
   }
 
   checkMark(mark) {
-  	return (mark > 5 || mark < 1) ? alert('Ошибка, оценка должна быть числом от 1 до 5') : mark;
+  	if(mark > 5 || mark < 1) {
+  		return alert('Ошибка, оценка должна быть числом от 1 до 5');
+  	} else {
+  		return mark;
+  	}
   }
 
   addGrade(mark, subject) {
