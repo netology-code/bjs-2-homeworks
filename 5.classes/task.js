@@ -141,6 +141,14 @@ class Student {
     this.age = age;
   }
 
+  validateMark(mark) {
+    if(mark > 0 && mark < 6) {
+      return mark;
+    } else {
+      return false;
+    }
+  }
+
   setSubject(subjectName) {
     this.subject = subjectName;
   }
@@ -150,10 +158,12 @@ class Student {
       this.marks = [];
     }
 
-    if(mark > 0 && mark < 6) {
+    let _mark = this.validateMark(mark);
+
+    if(_mark) {
       this.marks.push({subject: subject, mark: mark});
     } else {
-      console.log(`Оценка должна быть в диапазоне от 1 до 5. Текущая: ${mark}`);
+      return 'Ошибка, оценка должна быть числом от 1 до 5';
     }
 
   }
@@ -164,12 +174,7 @@ class Student {
     }
 
     marks.forEach(mark => {
-      if(mark > 0 && mark < 6) {
-        this.marks.push({subject: subject, mark: mark});
-
-      } else {
-        console.log(`Оценка должна быть в диапазоне от 1 до 5. Текущая: ${mark}`);
-      }
+      this.addMark(subject, mark);
     });
   }
 
@@ -177,9 +182,15 @@ class Student {
 
     const filteredSubjects = this.marks.filter(e => e.subject === subject);
 
-    return filteredSubjects.reduce((acc, el) => {
-      return acc + el.mark;
-    }, 0) / filteredSubjects.length;
+    if(filteredSubjects.length > 0) {
+      return filteredSubjects.reduce((acc, el) => {
+        return acc + el.mark;
+      }, 0) / filteredSubjects.length;
+
+    } else {
+      return 'Несуществующий предмет';
+    }
+
   }
 
   getAverage() {
@@ -200,12 +211,12 @@ student.addMark('algebra',5);
 student.addMark('algebra',5);
 student.addMark('geometry',5);
 student.addMark('geometry',4);
-//student.addMarks('geometry',1,2,3,4);
+student.addMarks('geometry',1,2,3,4);
 student.addMark('geometry',6); // "Ошибка, оценка должна быть числом от 1 до 5"
 console.log(student.marks)
 console.log(student.getAverageBySubject('geometry')); // Средний балл по предмету geometry 4.5
-student.getAverageBySubject('biology'); // Несуществующий предмет
-student.getAverage(); // Средний балл по всем предметам 4.75
+console.log(student.getAverageBySubject('biology')); // Несуществующий предмет
+console.log(student.getAverage()); // Средний балл по всем предметам 4.75
 student.exclude('Исключен за попытку подделать оценки');
 
 
