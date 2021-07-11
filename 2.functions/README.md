@@ -60,6 +60,7 @@ getArrayParams([1, 2, 3, -100, 10])  // { min: -100, max: 10, avg: `-16.80` }
 
 ### Пример
 ```js
+//worker
 let arrOfArr = [[1, 2, 3], [4, 5, 6]];
 mincer(arrOfArr, worker); // 15
 
@@ -74,7 +75,7 @@ arrOfArr = [[-10, -20, -40], [10, 20, 30]];
 mincer(arrOfArr, worker2); // 30
 
 arrOfArr = [[0, 0, 0], [-1, -99]];
-mincer(arrOfArr, worker2); // 99
+mincer(arrOfArr, worker2); // 98
 ```
 
 ## Требования для выполнения домашней работы
