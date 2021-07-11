@@ -115,16 +115,16 @@ describe('Домашнее задание к лекции 5 «Объекты»',
     });
  
     it('подсчёт средней оценки по предмету', () => {
-      student.addGrade(3, "algebra");
-      student.addGrade(5, "algebra");
+      student.addMark("algebra", 3);
+      student.addMark("algebra", 5);
       expect(student.getAverageBySubject("algebra")).toEqual(4);
     });
   
     it('подсчёт общей средней оценки', () => {
-      student.addGrade(3, "algebra");
-      student.addGrade(5, "algebra");
-      student.addGrade(5, "history");
-      student.addGrade(5, "history");
+      student.addMark("algebra", 3);
+      student.addMark("algebra", 5);
+      student.addMark("history", 5);
+      student.addMark("history", 5);
       expect(student.getAverage()).toEqual(4.5);
     });
   });
