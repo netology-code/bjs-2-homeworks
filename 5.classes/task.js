@@ -95,10 +95,10 @@ class Library {
   }
 
   findBookBy(type, value) {
-    let result;
+    let result = null;
 
     this.books.find(e => {
-        result = (e[type] === value) ? e : null;
+      return result = (e[type] === value) ? e : null;
     });
 
     return result;
@@ -120,8 +120,15 @@ class Library {
 
 const library = new Library("Библиотека имени Ленина");
 const murzilka = new Magazine("Мурзилка", 1919, 60);
+const murzilka2 = new Magazine("Мурзилка2", 1924, 60);
+const murzilka3 = new Magazine("Мурзилка3", 1926, 60);
+const murzilka4 = new Magazine("Мурзилка4", 1960, 60);
 
 library.addBook(murzilka);
+library.addBook(murzilka2);
+library.addBook(murzilka3);
+library.addBook(murzilka4);
+console.log(library.findBookBy("releaseDate", 1926).name); //"Мурзилка3"
 library.giveBookByName("Мурзилка");
 murzilka.state = 10;
 murzilka.fix();
@@ -165,6 +172,21 @@ class Student {
     } else {
       return 'Ошибка, оценка должна быть числом от 1 до 5';
     }
+
+    /* TODO make multidimentional array for marks
+    * let _mark = this.validateMark(mark);
+
+    if(this.marks.length === 0) {
+      this.marks.push({subject: subject});
+      if(_mark) {
+        this.marks.subject['marks'] = [];
+      }
+    }
+
+    if(this.marks.some(e => e.subject === subject)) {
+    }
+    *
+    * */
 
   }
 
@@ -211,7 +233,7 @@ student.addMark('algebra',5);
 student.addMark('algebra',5);
 student.addMark('geometry',5);
 student.addMark('geometry',4);
-student.addMarks('geometry',1,2,3,4);
+//student.addMarks('geometry',1,2,3,4);
 student.addMark('geometry',6); // "Ошибка, оценка должна быть числом от 1 до 5"
 console.log(student.marks)
 console.log(student.getAverageBySubject('geometry')); // Средний балл по предмету geometry 4.5
@@ -220,3 +242,4 @@ console.log(student.getAverage()); // Средний балл по всем пр
 student.exclude('Исключен за попытку подделать оценки');
 
 
+console.log(student);
