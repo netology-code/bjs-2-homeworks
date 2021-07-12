@@ -152,14 +152,3 @@ class Student {
   	delete this.subjects; 
   }
 }
-
-const student = new Student('Олег Никифоров');
-student.addGrade(5, 'algebra');
-student.addGrade(5, 'algebra');
-student.addGrade(5,'geometry');
-student.addGrade(4, 'geometry');
-student.addGrade(6, 'geometry'); // "Ошибка, оценка должна быть числом от 1 до 5"
-student.getAverageBySubject('geometry'); // Средний балл по предмету geometry 4.5
-student.getAverageBySubject('biology'); // Несуществующий предмет
-student.getAverage(); // Средний балл по всем предметам 4.75
-student.exclude('Исключен за попытку подделать оценки');
