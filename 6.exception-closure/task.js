@@ -3,15 +3,19 @@
 function parseCount(num) {
 
   try {
-    if (Number.parseInt(num) === NaN) {
-      throw "Invalid";
+    if (isNaN(Number.parseInt(num))) {
+      throw new Error("Невалидное значение");
     }
+
   } catch (e) {
-    if (e == "Invalid") {
-      alert("Невалидное значение");
-    }
+    console.log(e);
   }
 
+  return Number.parseInt(num);
+}
+
+function validateCount(num) {
+  parseCount(num);
 }
 
 console.log(parseCount('ыфва'));
