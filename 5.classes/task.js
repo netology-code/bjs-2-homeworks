@@ -148,45 +148,32 @@ class Student {
     this.age = age;
   }
 
-  validateMark(mark) {
-    if(mark > 0 && mark < 6) {
-      return mark;
-    } else {
-      return false;
-    }
-  }
-
   setSubject(subjectName) {
     this.subject = subjectName;
   }
 
   addMark(subject, mark) {
-    if(this.marks === undefined){
-      this.marks = [];
-    }
 
-    let _mark = this.validateMark(mark);
-
-    if(_mark) {
-      this.marks.push({subject: subject, mark: mark});
+    if(mark > 0 && mark < 6) {
+      mark = mark;
     } else {
+      console.log('Ошибка, оценка должна быть числом от 1 до 5');
       return 'Ошибка, оценка должна быть числом от 1 до 5';
     }
 
-    /* TODO make multidimentional array for marks
-    * let _mark = this.validateMark(mark);
+    if(this.marks === undefined && Number.isInteger(mark)){
+      this.marks = [{subject: subject, marks: [mark]}];
 
-    if(this.marks.length === 0) {
-      this.marks.push({subject: subject});
-      if(_mark) {
-        this.marks.subject['marks'] = [];
-      }
-    }
+    } else if (!this.marks.find(e => e.subject === subject)) {
+      this.marks.push({subject: subject, marks: [mark]});
 
-    if(this.marks.some(e => e.subject === subject)) {
+    } else {
+      this.marks.find(e => {
+        if(e.subject === subject) {
+          e.marks.push(mark);
+        }
+      });
     }
-    *
-    * */
 
   }
 
@@ -198,16 +185,18 @@ class Student {
     marks.forEach(mark => {
       this.addMark(subject, mark);
     });
+
   }
 
   getAverageBySubject(subject) {
 
-    const filteredSubjects = this.marks.filter(e => e.subject === subject);
+    const filteredSubjects = this.marks.find(e => {return e.subject === subject});
+    console.log(filteredSubjects.marks);
 
-    if(filteredSubjects.length > 0) {
-      return filteredSubjects.reduce((acc, el) => {
-        return acc + el.mark;
-      }, 0) / filteredSubjects.length;
+    if(filteredSubjects.marks.length > 0) {
+      return filteredSubjects.marks.reduce((acc, el) => {
+        return acc + el;
+      }, 0) / filteredSubjects.marks.length;
 
     } else {
       return 'Несуществующий предмет';
