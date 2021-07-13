@@ -11,10 +11,10 @@ class PrintEditionItem {
   }
 
   set state(state) {
-    if(state >= 100) {
+    if (state >= 100) {
       this._state = 100;
 
-    } else if(state <= 0) {
+    } else if (state <= 0) {
       this._state = 0;
 
     } else {
@@ -87,7 +87,7 @@ class Library {
   }
 
   addBook(book) {
-    if(book.state > 30) {
+    if (book.state > 30) {
       this.books.push(book);
     } else {
       console.log(`Книгу "${book.name}" нужно починить перед добавлением`)
@@ -109,7 +109,7 @@ class Library {
     const foundBook = this.books.find(e => e.name === bookName);
     this.books = filteredLibrary;
 
-    if(foundBook === undefined) {
+    if (foundBook === undefined) {
       return null;
     } else {
       return foundBook;
@@ -154,22 +154,22 @@ class Student {
 
   addMark(subject, mark) {
 
-    if(mark > 0 && mark < 6) {
+    if (mark > 0 && mark < 6) {
       mark = mark;
     } else {
       console.log('Ошибка, оценка должна быть числом от 1 до 5');
       return 'Ошибка, оценка должна быть числом от 1 до 5';
     }
 
-    if(this.marks === undefined && Number.isInteger(mark)){
-      this.marks = [{subject: subject, marks: [mark]}];
+    if (this.marks === undefined && Number.isInteger(mark)) {
+      this.marks = [{ subject: subject, marks: [mark] }];
 
     } else if (!this.marks.find(e => e.subject === subject)) {
-      this.marks.push({subject: subject, marks: [mark]});
+      this.marks.push({ subject: subject, marks: [mark] });
 
     } else {
       this.marks.find(e => {
-        if(e.subject === subject) {
+        if (e.subject === subject) {
           e.marks.push(mark);
         }
       });
@@ -178,7 +178,7 @@ class Student {
   }
 
   addMarks(subject, ...marks) {
-    if(this.marks === undefined){
+    if (this.marks === undefined) {
       this.marks = [];
     }
 
@@ -190,22 +190,29 @@ class Student {
 
   getAverageBySubject(subject) {
 
-    const filteredSubjects = this.marks.find(e => {return e.subject === subject});
-    console.log(filteredSubjects.marks);
+    const filteredSubjects = this.marks.find(e => { return e.subject === subject });
 
-    if(filteredSubjects.marks.length > 0) {
+    if (filteredSubjects === undefined) {
+      return 'Несуществующий предмет';
+
+    } else {
       return filteredSubjects.marks.reduce((acc, el) => {
         return acc + el;
       }, 0) / filteredSubjects.marks.length;
 
-    } else {
-      return 'Несуществующий предмет';
     }
 
   }
 
   getAverage() {
-    return this.marks.reduce((acc, el) => acc + el.mark, 0) / this.marks.length;
+    let total = 0;
+
+    this.marks.forEach(function (el) {
+      total += el.marks.reduce((acc, elem) => acc + elem, 0) / el.marks.length;
+    });
+
+    return total / this.marks.length;
+
   }
 
   exclude(reason) {
@@ -218,12 +225,12 @@ class Student {
 }
 
 const student = new Student('Олег Никифоров');
-student.addMark('algebra',5);
-student.addMark('algebra',5);
-student.addMark('geometry',5);
-student.addMark('geometry',4);
+student.addMark('algebra', 5);
+student.addMark('algebra', 5);
+student.addMark('geometry', 5);
+student.addMark('geometry', 4);
 //student.addMarks('geometry',1,2,3,4);
-student.addMark('geometry',6); // "Ошибка, оценка должна быть числом от 1 до 5"
+student.addMark('geometry', 6); // "Ошибка, оценка должна быть числом от 1 до 5"
 console.log(student.marks)
 console.log(student.getAverageBySubject('geometry')); // Средний балл по предмету geometry 4.5
 console.log(student.getAverageBySubject('biology')); // Несуществующий предмет
