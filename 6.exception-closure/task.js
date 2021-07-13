@@ -15,7 +15,7 @@ function parseCount(num) {
 }
 
 function validateCount(num) {
-  parseCount(num);
+  parseCount(num)
 }
 
 console.log(parseCount('ыфва'));
