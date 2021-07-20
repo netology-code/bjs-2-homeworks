@@ -1,13 +1,13 @@
 describe("Домашнее задание к занятию 2 Функции", () => {
   describe("Задача №1 Исследовать массив", () => {
     it("[-99, 99, 10] => { min: -99, max: 99, avg: `3.33` }", () => {
-      expect(getArrayParams([-99, 99, 10])).toEqual({ min: -99, max: 99, avg: "3.33" })
+      expect(getArrayParams([-99, 99, 10])).toEqual({ min: -99, max: 99, avg: 3.33 })
     })
     it("[1, 2, 3, -100, 10] => { min: -100, max: 10, avg: `-16.80` }", () => {
-      expect(getArrayParams([1, 2, 3, -100, 10])).toEqual({ min: -100, max: 10, avg: "-16.80" })
+      expect(getArrayParams([1, 2, 3, -100, 10])).toEqual({ min: -100, max: 10, avg: -16.80 })
     })
     it("[5] => { min: 5, max: 5, avg: `5.00` }", () => {
-      expect(getArrayParams([5])).toEqual({ min: 5, max: 5, avg: "5.00" })
+      expect(getArrayParams([5])).toEqual({ min: 5, max: 5, avg: 5.00 })
     })
   })
   describe("Задача №2 Максимум от суммы", () => {
