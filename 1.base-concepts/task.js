@@ -17,32 +17,25 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
-
   if (isNaN(percent)) {
     return 'Параметр "Процентная ставка" содержит неправильное значение ' + "\"" + `${String(percent)}` + "\"";
-
   }
   if (isNaN(contribution)) {
     return 'Параметр "Начальный взнос" содержит неправильное значение ' + "\"" + `${contribution}` + "\"";
-
   }
   if (isNaN(amount)) {
     return 'Параметр "Общая стоимость" содержит неправильное значение ' + "\"" + `${amount}` + "\"";
   }
 
-
-
-  let totalAmount = 0;
-  let creditBody = 0;
-  let percentDoubleMonth = 0;
-  let payment = 0;
-  creditBody = parseInt(amount - contribution);
-  let clientDate = new Date(date);
+  let totalAmount;
+  let creditBody;
+  let percentDoubleMonth;
+  let payment;
+  creditBody = amount - contribution;
   let currentDate = new Date();
   let resultDate = 0;
-  resultDate = monthDiff(clientDate, currentDate);
-
-  percentDoubleMonth = parseFloat(+percent / 100 / 12);
+  resultDate = monthDiff(date, currentDate);
+  percentDoubleMonth = percent / 100 / 12;
   payment = creditBody * (percentDoubleMonth + percentDoubleMonth / (((1 + percentDoubleMonth) ** resultDate) - 1));
   totalAmount = (payment * resultDate);
   console.log(totalAmount);
@@ -50,7 +43,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 }
 
 function monthDiff(d1, d2) {
-  let months = 0;
+  let months;
   months = (d1.getFullYear() - d2.getFullYear()) * 12;
   months -= d2.getMonth();
   months += d1.getMonth();
