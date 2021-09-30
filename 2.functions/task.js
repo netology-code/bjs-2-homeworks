@@ -1,10 +1,10 @@
 // Задание 1
 function getArrayParams(arr) {
-  let min,max,sum,avg;
+  let min, max, sum, avg;
 
   // Ваш код
 
-  return { min:min, max:max, avg:avg };
+  return { min: min, max: max, avg: avg };
 }
 
 // Задание 2
@@ -17,12 +17,12 @@ function worker(arr) {
 }
 
 function makeWork(arrOfArr, func) {
-  let max
+  let max;
 
   // Ваш кода
   // for ...
   
-  return max
+  return max;
 }
 
 // Задание 3
