@@ -2,8 +2,14 @@ describe("Домашнее задание к занятию 8 «Функции �
   describe("Задача №1 Усовершенствованный кэширующий декоратор", () => {
     let add2 = (a, b) => a + b;
     let add3 = (a, b, c) => a + b + c;
-    let upgAdd2 = cachingDecoratorNew(add2);
-    let upgAdd3 = cachingDecoratorNew(add3);
+    let upgAdd2;
+    let upgAdd3;
+
+
+    beforeEach(function(){
+      upgAdd2 = cachingDecoratorNew(add2);
+      upgAdd3 = cachingDecoratorNew(add3);
+    });
 
     it("Декоратор кэширует", () => {
       expect(upgAdd2(1, 2)).toEqual("Вычисляем: 3");
