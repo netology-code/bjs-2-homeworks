@@ -9,12 +9,12 @@ upgradedAddThree(5, 2, 3);
 upgradedAddThree(6, 2, 3); 
 upgradedAddThree(1, 2, 3); 
 
-const sendSignal = () => console.log('Сигнал послан'); 
-const upgradedSendSignal = debounceDecoratorNew(sendSignal,2000);
-setTimeout(upgradedSendSignal()); 
-setTimeout(upgradedSendSignal(),300); 
-setTimeout(upgradedSendSignal(),900); 
-setTimeout(upgradedSendSignal(),1200);
-setTimeout(upgradedSendSignal(),2300);
-setTimeout(upgradedSendSignal(),4400);
-setTimeout(upgradedSendSignal(),4500);
+const sendSignal = () => console.log("Сигнал отправлен");
+const upgradedSendSignal = debounceDecoratorNew(sendSignal, 2000);
+setTimeout(upgradedSendSignal); // Сигнал отправлен
+setTimeout(upgradedSendSignal, 300); // проигнорировано так как от последнего вызова прошло менее 2000мс
+setTimeout(upgradedSendSignal, 900); // проигнорировано аналогично
+setTimeout(upgradedSendSignal, 1200); // проигнорировано аналогично
+setTimeout(upgradedSendSignal, 2300); // проигнорировано аналогично
+setTimeout(upgradedSendSignal, 4400); // Сигнал отправлен
+setTimeout(upgradedSendSignal, 4500); // проигнорировано аналогично
