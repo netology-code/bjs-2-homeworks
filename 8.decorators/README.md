@@ -20,7 +20,7 @@ return "Вычисляем: " + result);
 Кэш можно сделать массивом объектов. Например:
 
 ```js
-cash = [
+cache = [
   { hash: "10,20,30", value: 60 },
   { hash: "2,2,2", value: 6 },
 ];
@@ -34,7 +34,7 @@ cash = [
   Тогда при каждом запуске (внутри `wrapper`) нам следует проверять, есть ли `hash` для данных аргументов в кэше.
   
   Как это сделать? 
-  Например методом findIndex. `const idx = cash.findIndex( (item) => тут нужно подумать )`
+  Например методом findIndex. `const idx = cache.findIndex( (item) => тут нужно подумать )`
 </details>
 
 <details> 

@@ -1,4 +1,4 @@
-describe('Домашнее задание к лекции 5 «Объекты»', () => {
+describe('Домашнее задание к лекции 5 «Классы»', () => {
 
   describe('Задача №1', () => {
     let printItem;
@@ -43,8 +43,11 @@ describe('Домашнее задание к лекции 5 «Объекты»',
     it('создание объекта Book', () => {
       printItem = new Book('А. Сапковский', 'Меч Предназначения', 1992, 384);
       expect(printItem.author).toEqual('А. Сапковский');
+      expect(printItem.name).toEqual('Меч Предназначения');
+      expect(printItem.releaseDate).toEqual(1992);
+      expect(printItem.pagesCount).toEqual(384);      
       expect(printItem.type).toEqual('book');
-    });  
+    });
     
     it('создание объекта NovelBook', () => {
       printItem = new NovelBook('А. Сапковский', 'Меч Предназначения', 1992, 384);
@@ -62,7 +65,7 @@ describe('Домашнее задание к лекции 5 «Объекты»',
       printItem = new DetectiveBook('Агата Кристи', 'Десять негритят', 2019, 256);
       expect(printItem.author).toEqual('Агата Кристи');
       expect(printItem.type).toEqual('detective');
-    }); 
+    });
   });
 
   describe('Задача №2', () => {
@@ -86,6 +89,8 @@ describe('Домашнее задание к лекции 5 «Объекты»',
     });   
     
     it('поиск книги', () => {
+      const printItemAdditional = new PrintEditionItem('Блокнот для заметок', 2021, 100);
+      library.addBook(printItemAdditional);
       library.addBook(printItem);
       const firstBook = library.findBookBy("releaseDate", 2019);
       expect(firstBook.name).toEqual('Типовой школьный журнал');
