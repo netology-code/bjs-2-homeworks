@@ -1,16 +1,16 @@
 "use strict";
 function solveEquation(a, b, c) {
   let arr;
-  const d = b**2 - 4*a*c;
-  if (d < 0) {
+  const discriminant = b**2 - 4*a*c;
+  if (discriminant < 0) {
     arr = [];
-  } else if (d === 0) {
-    let x = (-b/(2*a));
-    arr = [x];
-  } else if (d > 0) {
-    let x1 = (-b + Math.sqrt(d)) / (2*a);
-    let x2 = (-b - Math.sqrt(d)) / (2*a);
-    arr = [x1, x2];
+  } else if (discriminant === 0) {
+    let root = (-b/(2*a));
+    arr = [root];
+  } else if (discriminant > 0) {
+    let root1 = (-b + Math.sqrt(discriminant)) / (2*a);
+    let root2 = (-b - Math.sqrt(discriminant)) / (2*a);
+    arr = [root1, root2];
   };
   return arr;
 };
@@ -19,18 +19,19 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, date) {
   let totalAmount;
   let S = amount - contribution;
-  let P = (1/12)*(percent/100);
-  let currentDate;
-  let n = (date - currentDate) / 12;
+  let P = percent/100/12;
+  let currentMonth = new Date().getMonth();
+  let currentYear = new Date().getFullYear();
+  let n = (date.getFullYear() - currentYear)*12 + (date.getMonth() - currentMonth);
   let pay = S * (P + (P / (((1 + P)**n) - 1)));
-  totalAmount = (pay*period).toFixed(2);
+  totalAmount = (pay*n).toFixed(2);
   console.log(Number(totalAmount));
 
-  if (percent != Number) {
+  if (isNaN(percent)) {
     console.log("Параметр percent содержит неправильное значение ${percent}");
-  } else if (contribution != Number) {
+  } else if (isNaN(contribution)) {
     console.log("Параметр contribution содержит неправильное значение ${contribution}");
-  } else if (amount != Number) {
+  } else if (isNaN(amount)) {
     console.log("Параметр amount содержит неправильное значение ${amount}");
   };
 
