@@ -6,7 +6,7 @@ function getArrayParams(arr) {
   sum = 0;
   
   for (i = 0; i < arr.length; i++) {
-
+    let arr;
     if (max < arr[i]) {
       max = arr[i];
     };
@@ -27,6 +27,7 @@ function worker(arr) {
   let sum = 0;
   
   for (i = 0; i < arr.length; i++) {
+    let arr;
     sum += arr[i];
   };
 
@@ -35,11 +36,12 @@ function worker(arr) {
 
 function makeWork(arrOfArr, func) {
   let max = func(arrOfArr[0]);
-  arrOfArr = [];
+  const funcNozzle = func(arrOfArr[i]);
 
   for (i = 0; i < arrOfArr.length; i++) {
-    if (max < func(arrOfArr[i])) {
-      max = func(arrOfArr[i]);
+    let arrOfArr;
+    if (max < funcNozzle) {
+      max = funcNozzle;
     };
   };
 
@@ -49,5 +51,21 @@ function makeWork(arrOfArr, func) {
 
 // Задание 3
 function worker2(arr) {
-  // Ваш код
+  let difference = 0;
+  let maxInArr = arr[0];
+  let minInArr = arr[0];
+  
+  for (i = 0; i < arr.length; i++) {
+    let arr;
+    if (maxInArr < arr[i]) {
+      maxInArr = arr[i];
+    };
+    if (minInArr > arr[i]) {
+      minInArr = arr[i];
+    };
+
+     difference = Math.abs(maxInArr - minInArr);
+  };
+
+  return difference;
 }
