@@ -5,8 +5,7 @@ function getArrayParams(arr) {
   max = arr[0];
   sum = 0;
   
-  for (i = 0; i < arr.length; i++) {
-    let arr;
+  for (let i = 0; i < arr.length; i++) {   
     if (max < arr[i]) {
       max = arr[i];
     };
@@ -26,8 +25,7 @@ function getArrayParams(arr) {
 function worker(arr) {
   let sum = 0;
   
-  for (i = 0; i < arr.length; i++) {
-    let arr;
+  for (let i = 0; i < arr.length; i++) {  
     sum += arr[i];
   };
 
@@ -36,10 +34,9 @@ function worker(arr) {
 
 function makeWork(arrOfArr, func) {
   let max = func(arrOfArr[0]);
-  const funcNozzle = func(arrOfArr[i]);
 
-  for (i = 0; i < arrOfArr.length; i++) {
-    let arrOfArr;
+  for (let i = 0; i < arrOfArr.length; i++) { 
+    const funcNozzle = func(arrOfArr[i]);  
     if (max < funcNozzle) {
       max = funcNozzle;
     };
@@ -51,21 +48,17 @@ function makeWork(arrOfArr, func) {
 
 // Задание 3
 function worker2(arr) {
-  let difference = 0;
   let maxInArr = arr[0];
   let minInArr = arr[0];
   
-  for (i = 0; i < arr.length; i++) {
-    let arr;
+  for (let i = 0; i < arr.length; i++) {   
     if (maxInArr < arr[i]) {
       maxInArr = arr[i];
     };
     if (minInArr > arr[i]) {
       minInArr = arr[i];
     };
-
-     difference = Math.abs(maxInArr - minInArr);
   };
 
-  return difference;
+  return Math.abs(maxInArr - minInArr);
 }
