@@ -36,7 +36,7 @@ student1.setSubject("Algebra");
 student1.addMark(5);
 student1.addMark(4);
 student1.addMark(5);
-console.log(student1.getAverage()); //4.6666
+console.log(student1.getAverage()); // 4.666666666666667
 console.log(student1);
 // {age: 37, gender: "male", marks: [5, 4, 5], name: "Tony", subject: "Algebra"}
 let student2 = new Student("Buzz", "female", 35);
