@@ -1,19 +1,13 @@
 'use strict'
 function solveEquation(a, b, c) {
-  let arr = new Array;
+  let arr = [];
   const total = b ** 2 - 4 * a * c;
-  if (total < 0) {
-    return [];
-  }
   if (total == 0) {
-    const temp = -b/(2*a);
-    arr.push(temp)
+    arr.push(-b/(2*a))
   }
   if (total > 0) {
-    let temp = (-b + Math.sqrt(total) )/(2*a);
-    arr.push(temp);
-    temp = (-b - Math.sqrt(total) )/(2*a);
-    arr.push(temp);
+    arr.push((-b + Math.sqrt(total) )/(2*a));
+    arr.push((-b - Math.sqrt(total) )/(2*a));
   }
   return arr; // array
 }
