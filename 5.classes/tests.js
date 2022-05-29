@@ -15,30 +15,36 @@ describe('Домашнее задание к лекции 5 «Классы»', (
       expect(printItem.state).toEqual(100);
       expect(printItem.type).toEqual(null);
     });
-  
-    it('починка печатного издания', () => {
+
+    it('починка почти целого печатного издания (ограничение сеттером state)', () => {
       printItem.state = 90;
       printItem.fix();
       expect(printItem.state).toEqual(100);
-    });  
-    
+    });
+
+    it('починка печатного издания', () => {
+      printItem.state = 50;
+      printItem.fix();
+      expect(printItem.state).toEqual(75);
+    });
+
     it('геттер для свойства state', () => {
       printItem.state = 10;
       const spy = spyOnProperty(printItem, 'state', 'get').and.returnValue(10);
       expect(printItem.state).toBe(10);
       expect(spy).toHaveBeenCalled();
-    });  
+    });
     
     it('сеттер для свойства state', () => {
       const spy = spyOnProperty(printItem, 'state', 'set');
       printItem.state = 10;
       expect(spy).toHaveBeenCalled();
-    });    
-    
+    });
+
     it('создание объекта Magazine', () => {
       printItem = new Magazine('Forbes', 2020, 180);
       expect(printItem.type).toEqual("magazine");
-    });   
+    });
     
     it('создание объекта Book', () => {
       printItem = new Book('А. Сапковский', 'Меч Предназначения', 1992, 384);
@@ -48,7 +54,7 @@ describe('Домашнее задание к лекции 5 «Классы»', (
       expect(printItem.pagesCount).toEqual(384);      
       expect(printItem.type).toEqual('book');
     });
-    
+
     it('создание объекта NovelBook', () => {
       printItem = new NovelBook('А. Сапковский', 'Меч Предназначения', 1992, 384);
       expect(printItem.author).toEqual('А. Сапковский');
@@ -80,13 +86,13 @@ describe('Домашнее задание к лекции 5 «Классы»', (
       expect(library).toBeDefined();
       expect(library.name).toEqual('Библиотека имени Ленина');
       expect(library.books).toEqual(jasmine.any(Array));
-    });   
+    });
     
     it('добавление книги', () => {
       library.addBook(printItem);
       expect(library.books[0].name).toEqual('Типовой школьный журнал');
       expect(library.books.length).toEqual(1);
-    });   
+    });
     
     it('поиск книги', () => {
       const printItemAdditional = new PrintEditionItem('Блокнот для заметок', 2021, 100);
@@ -96,7 +102,7 @@ describe('Домашнее задание к лекции 5 «Классы»', (
       expect(firstBook.name).toEqual('Типовой школьный журнал');
       const secondBook = library.findBookBy("releaseDate", 2154);
       expect(secondBook).toEqual(null);
-    });   
+    });
     
     it('выдача книги', () => {
       library.addBook(printItem);
@@ -118,13 +124,13 @@ describe('Домашнее задание к лекции 5 «Классы»', (
     it('создание объекта Student', () => {
       expect(student).toBeDefined();
     });
- 
+
     it('подсчёт средней оценки по предмету', () => {
       student.addMark(3, "algebra");
       student.addMark(5, "algebra");
       expect(student.getAverageBySubject("algebra")).toEqual(4);
     });
-  
+
     it('подсчёт общей средней оценки', () => {
       student.addMark(3, "algebra");
       student.addMark(5, "algebra");
