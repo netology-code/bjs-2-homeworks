@@ -3,20 +3,20 @@
 function solveEquation(a, b, c) {
 
   let arr=[];
-  let x1,x2;
-  if (a===0) {throw new Error("ошибка")}
+  let x1, x2;
+  if (a === 0) {throw new Error("ошибка")}
   
 
-  let d=b**2-4*a*c;
+  let d = b**2 - 4 * a * c;
   
  
- if (d===0) {
-  x1=-b/(2*a);
+ if (d === 0) {
+  x1 = -b / (2 * a);
  arr.push(x1);
 
   } else if(d>0){
-    x1=(-b + Math.sqrt(d))/(2*a);
-    x2=(-b - Math.sqrt(d))/(2*a);
+    x1=(-b + Math.sqrt(d)) / (2 * a);
+    x2=(-b - Math.sqrt(d)) / (2 * a);
     
    arr.push(x1, x2);
   }
@@ -32,14 +32,14 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   if(typeof amount !== 'number'){return `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`}
 
     let totalAmount;
-    let S=amount-contribution;
+    let S = amount - contribution;
     
     let nowDate=new Date();
-      let year1=nowDate.getFullYear();
-      let year2=date.getFullYear();
-      let month1=nowDate.getMonth();
-      let month2=date.getMonth();
-     if(month1===0){
+      let year1 =nowDate.getFullYear();
+      let year2 = date.getFullYear();
+      let month1 = nowDate.getMonth();
+      let month2 = date.getMonth();
+     if(month1 === 0){
         month1++;
         month2++;
       }
