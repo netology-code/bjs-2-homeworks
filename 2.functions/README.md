@@ -22,8 +22,8 @@
 
 ### Пример
 ```js
-getArrayParams([-99, 99, 10]) // { min: -99, max: 99, avg: 3.33 }
-getArrayParams([1, 2, 3, -100, 10])  // { min: -100, max: 10, avg: -16.80 }
+getArrayParams([-99, 99, 10]) // { min: -99, max: 99, avg: `3.33` }
+getArrayParams([1, 2, 3, -100, 10])  // { min: -100, max: 10, avg: `-16.80` }
 ```
 
 ## Задача № 2
