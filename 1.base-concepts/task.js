@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 function solveEquation(a, b, c) {
     "use strict";
@@ -44,4 +45,18 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
     let totalAmount = monthPayment * periodMonthCredit;
     console.log(Math.round(totalAmount * 100) / 100);
     return Math.round(totalAmount * 100) / 100;
+=======
+function solveEquation(a, b, c) {
+  let arr;
+  // код для задачи №1 писать здесь
+  return arr; // array
+}
+
+function calculateTotalMortgage(percent, contribution, amount, date) {
+  let totalAmount;
+
+  // код для задачи №2 писать здесь
+
+  return totalAmount;
+>>>>>>> 0b4274c9d9863bbf092c9bc6703e15677a4ab48f
 }
