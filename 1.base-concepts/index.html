@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <title>Основные понятия</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo__container">
+        <a href="https://netology.ru/" class="logo__link"></a>
+      </div>
+      <h1 class="header__title">
+        Домашнее задание к лекции 1. «Основные понятия»
+      </h1>
+    </header>
+    <main class="content">
+      <div class="card">
+        <input type="number" placeholder="a" id="a" />
+        <input type="number" placeholder="b" id="b" />
+        <input type="number" placeholder="c" id="c" />
+        <button onClick="calculateQuadraticEquation()">
+          Считать задание №1
+        </button>
+        <div>
+          <span id="equation"></span><br />
+          <span id="result"></span>
+        </div>
+      </div>
+
+      <div class="card">
+        <input type="text" placeholder="Процентная ставка" id="percent" />
+        <input type="text" placeholder="Начальный взнос" id="contribution" />
+        <input type="text" placeholder="Общая стоимость" id="amount" />
+        <label>Срок ипотеки <input type="date" id="date" /></label>
+        <button onClick="calculateMortgage()">
+          Посчитать общую стоимость ипотеки
+        </button>
+        <div>
+          <span id="mortageResult"></span>
+        </div>
+      </div>
+    </main>
+    <script src="task.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
