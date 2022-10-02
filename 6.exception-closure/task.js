@@ -2,15 +2,13 @@ function parseCount(value) {
   const number = parseInt(value, 10);
   if (isNaN(number)) {
     throw new Error("Невалидное значение");
-  } else {
-    return number;
   }
+  return number;
 }
 
 function validateCount(value) {
   try {
-    const number = parseCount(value);
-    return number;
+    return (number = parseCount(value));
   } catch (error) {
     console.log(error);
     return error;
@@ -21,11 +19,10 @@ class Triangle {
   constructor(first, second, third) {
     if (first + second < third || first > second + third || first + third < second) {
       throw new Error("Треугольник с такими сторонами не существует");
-    } else {
-      this.first = first;
-      this.second = second;
-      this.third = third;
     }
+    this.first = first;
+    this.second = second;
+    this.third = third;
   }
 
   getPerimeter() {
@@ -44,12 +41,6 @@ function getTriangle(first, second, third) {
     return new Triangle(first, second, third);
   } catch (error) {
     const error2 = "Ошибка! Треугольник не существует";
-    const getArea = function () {
-      return error2;
-    };
-    const getPerimeter = function () {
-      return error2;
-    };
-    return { getArea, getPerimeter };
+    return { getArea: () => error2, getPerimeter: () => error2 };
   }
 }
