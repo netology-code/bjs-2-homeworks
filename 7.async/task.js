@@ -16,9 +16,13 @@ class AlarmClock {
   }
 
   removeClock(id) {
+    const length = this.alarmCollection.length;
     this.alarmCollection = this.alarmCollection.filter((item) => item.id !== id);
-    console.log(`Будильник № ${id} удален`);
-    return this.alarmCollection.some((item) => item.id === id);
+    if (length - this.alarmCollection.length) {
+      console.log(`Будильник № ${id} удален`);
+      return true;
+    }
+    return false;
   }
 
   getCurrentFormattedTime() {
@@ -27,26 +31,25 @@ class AlarmClock {
 
   start() {
     console.log("Запуск таймера");
-    const time = this.getCurrentFormattedTime.bind(this);
 
-    function checkClock(alarm) {
-      if (time() === alarm.time) {
+    let checkClock = (alarm) => {
+      const time = this.getCurrentFormattedTime();
+      if (time === alarm.time) {
         console.log("Запускаем будильник");
         alarm.callback();
       }
-    }
+    };
 
     if (this.timerId) {
       return;
     }
 
-    function alarmsCheck() {
+    let alarmsCheck = () => {
       console.log("Проверяем будильники");
       this.alarmCollection.forEach((item) => checkClock(item));
-    }
+    };
 
-    const func = alarmsCheck.bind(this);
-    this.timerId = setInterval(func, 5000);
+    this.timerId = setInterval(alarmsCheck, 4000);
   }
 
   stop() {
@@ -73,15 +76,14 @@ class AlarmClock {
 
 function testCase() {
   const alarmToday = new AlarmClock();
-  const now = new Date().toLocaleTimeString().slice(0, -3);
-  const now2 = new Date();
-  const now3 = new Date();
-  const nowPlusOneMinute = new Date(now2.setMinutes(now2.getMinutes() + 1))
+  let now = new Date();
+  const nowPlusOneMinute = new Date(new Date().setMinutes(now.getMinutes() + 1))
     .toLocaleTimeString()
     .slice(0, -3);
-  const nowPlusTwoMinutes = new Date(now3.setMinutes(now3.getMinutes() + 2))
+  const nowPlusTwoMinutes = new Date(new Date().setMinutes(now.getMinutes() + 2))
     .toLocaleTimeString()
     .slice(0, -3);
+  now = now.toLocaleTimeString().slice(0, -3);
 
   alarmToday.addClock(now, () => console.log(`звонок1 ${now}`), 1);
   alarmToday.addClock(
@@ -97,11 +99,11 @@ function testCase() {
   console.log("Текущее время " + alarmToday.getCurrentFormattedTime());
   alarmToday.printAlarms();
   alarmToday.start();
-  setTimeout(() => alarmToday.removeClock(1), 20000);
-  setTimeout(() => alarmToday.printAlarms(), 20000);
+  setTimeout(() => alarmToday.removeClock(1), 19000);
+  setTimeout(() => alarmToday.printAlarms(), 19001);
   setTimeout(() => {
     console.log("Текущее время " + alarmToday.getCurrentFormattedTime());
   }, 20000);
-  setTimeout(() => alarmToday.clearAlarms(), 90000);
-  setTimeout(() => alarmToday.printAlarms(), 90000);
+  setTimeout(() => alarmToday.clearAlarms(), 50001);
+  setTimeout(() => alarmToday.printAlarms(), 50002);
 }
