@@ -30,6 +30,11 @@ class AlarmClock {
   }
 
   start() {
+
+    if (this.timerId) {
+      return;
+    }
+
     console.log("Запуск таймера");
 
     let checkClock = (alarm) => {
@@ -39,10 +44,6 @@ class AlarmClock {
         alarm.callback();
       }
     };
-
-    if (this.timerId) {
-      return;
-    }
 
     let alarmsCheck = () => {
       console.log("Проверяем будильники");

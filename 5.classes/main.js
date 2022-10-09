@@ -43,6 +43,7 @@
 
 //Student
 const student = new Student("Олег Никифоров");
+
 student.addMark(5, "algebra");
 student.addMark(3, "algebra");
 student.getAverageBySubject("algebra"); // Средний балл по предмету algebra 4

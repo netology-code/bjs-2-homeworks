@@ -107,9 +107,7 @@ class Library {
     return findBook;
   }
   giveBookByName(bookName) {
-    const findBookIndex = this.books.findIndex(
-      (book) => book.name === bookName
-    );
+    const findBookIndex = this.books.findIndex((book) => book.name === bookName);
     if (findBookIndex === -1) {
       return null;
     }
@@ -121,15 +119,6 @@ class Library {
 class Student {
   constructor(name) {
     this.name = name;
-    this.subjects = [];
-  }
-
-  setSubject(name) {
-    this.subjects.push(new Subject(name));
-  }
-
-  setMark(mark, subject) {
-    this.subjects.find((item) => item.name === subject).marks.push(mark);
   }
 
   addMark(mark, subject) {
@@ -138,22 +127,19 @@ class Student {
       return;
     }
 
-    if (this.subjects.some((item) => item.name === subject)) {
-      this.setMark(mark, subject);
+    if (this[subject]) {
+      this[subject].marks.push(mark);
     } else {
-      this.setSubject(subject);
-      this.setMark(mark, subject);
+      this[subject] = { marks: [] };
+      this[subject].marks.push(mark);
     }
   }
-  
+
   getAverageBySubject(subject) {
-    if (this.subjects.some((item) => item.name === subject)) {
+    if (this[subject]) {
       let sum = 0;
-      this.subjects
-        .find((item) => item.name === subject)
-        .marks.forEach((item) => (sum += item));
-      const length = this.subjects.find((item) => item.name === subject).marks
-        .length;
+      this[subject].marks.forEach((item) => (sum += item));
+      const length = this[subject].marks.length;
       const average = Math.floor((sum * 100) / length) / 100;
       console.log(`Средний балл по предмету ${subject} ${average}`);
       return average;
@@ -161,15 +147,21 @@ class Student {
       console.log("Несуществующий предмет");
     }
   }
+
   getAverage() {
     let sumTotal = 0;
     let length = 0;
-    this.subjects.forEach((item) => {
+
+    for (let property in this) {
+      if (property === "name") {
+        continue;
+      }
+
       let sum = 0;
-      item.marks.forEach((item) => (sum += item));
+      this[property].marks.forEach((item) => (sum += item));
       sumTotal = sumTotal + sum;
-      length = length + item.marks.length;
-    });
+      length = length + this[property].marks.length;
+    }
     const average = Math.floor((sumTotal * 100) / length) / 100;
     console.log(`Средний балл по всем предметам ${average}`);
     return average;
@@ -179,12 +171,5 @@ class Student {
     this.subjects = [];
     this.exclude = reason;
     console.log(reason);
-  }
-}
-
-class Subject {
-  constructor(name) {
-    this.name = name;
-    this.marks = [];
   }
 }
