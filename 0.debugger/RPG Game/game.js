@@ -382,6 +382,7 @@ class Demourge extends Mage {
 // Процесс игры
 
 function play(takenPlayers) {
+	debugger;
 	const players = [...takenPlayers];
 	do {
 		for(let i = 0; i < players.length; i++){
