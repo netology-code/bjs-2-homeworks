@@ -19,6 +19,14 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   let totalAmount;
 
   if(
+    percent === '' ||
+    contribution === '' ||
+    amount === ''
+  ) {
+    return 'Убедитесь, что вы ввели числа в каждое поле'
+  }
+
+  if(
     isNaN(Number(percent)) ||
     isNaN(Number(contribution)) ||
     isNaN(Number(amount))
