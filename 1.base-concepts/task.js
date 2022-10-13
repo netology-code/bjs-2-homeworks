@@ -29,7 +29,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
   const creditBody = amount - contribution;
   const countMonth = Math.floor(((date.getTime() - Date.now()) / 1000) / 2592000);
  
-  const pricentState = percent/12
+  const pricentState = (percent / 100)/12
   const monthPayment = creditBody * (pricentState + (pricentState / (((1 + pricentState)**countMonth) - 1)))
   // код для задачи №2 писать здесь
   totalAmount = (monthPayment * countMonth).toFixed(2);
