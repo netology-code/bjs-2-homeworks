@@ -23,4 +23,4 @@ setTimeout(() => upgradedSendSignal(7, 4500), 4500); // Сигнал будет 
 setTimeout(() => {
   console.log(upgradedSendSignal.count); // было выполнено 3 отправки сигнала
   console.log(upgradedSendSignal.allCount); // было выполнено 6 вызовов декорированной функции
-}, 7000)
+}, 8000)

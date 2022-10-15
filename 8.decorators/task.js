@@ -9,7 +9,7 @@ function cachingDecoratorNew(func) {
       return "Из кэша: " + object.value;
     }
     let result = func(...args);
-    cache.push({ hash: hash, value: result });
+    cache.push({ hash, value: result });
     if (cache.length > 5) {
       cache.shift();
     }
@@ -22,26 +22,22 @@ function cachingDecoratorNew(func) {
 
 function debounceDecoratorNew(func, delay) {
   let timeOutId = null;
-  let allCount = 0;
-  let count = 0;
+  wrapper.allCount = 0;
+  wrapper.count = 0;
 
   function wrapper(...args) {
-    allCount++;
-    wrapper.allCount = allCount;
-    if (timeOutId) {
-      console.log("Таймер уже был запущен");
-      clearTimeout(timeOutId);
-      console.log("Сбросили таймер");
+    wrapper.allCount++;
+
+    if (timeOutId === null) {
+      func(...args);
+      wrapper.count++;
     }
 
-    console.log("Запускаем таймер");
-    const funcAsync = function () {
-      console.log("Запускаем колбэк");
-      count++;
-      wrapper.count = count;
+    clearTimeout(timeOutId);
+    timeOutId = setTimeout(() => {
+      wrapper.count++;
       func(...args);
-    };
-    timeOutId = setTimeout(funcAsync, delay);
+    }, delay);
   }
 
   return wrapper;
