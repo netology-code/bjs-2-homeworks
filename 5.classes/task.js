@@ -115,7 +115,7 @@ class Library {
   }
 }
 
-// Задание 3. Студент
+// Задание 3. Студент  (на свойстве объекта)
 class Student {
   constructor(name) {
     this.name = name;

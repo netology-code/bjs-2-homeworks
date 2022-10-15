@@ -1,13 +1,15 @@
-const addThree = (a, b, c) => (a + b + c); 
-const upgradedAddThree = cachingDecoratorNew(addThree);
-upgradedAddThree(1, 2, 3); 
-upgradedAddThree(1, 2, 3); 
-upgradedAddThree(2, 2, 3); 
-upgradedAddThree(3, 2, 3); 
-upgradedAddThree(4, 2, 3); 
-upgradedAddThree(5, 2, 3); 
-upgradedAddThree(6, 2, 3); 
-upgradedAddThree(1, 2, 3);
+// const addThree = (a, b, c) => (a + b + c); 
+// const upgradedAddThree = cachingDecoratorNew(addThree);
+// upgradedAddThree(1, 2, 3); 
+// upgradedAddThree(1, 2, 3); 
+// upgradedAddThree(2, 2, 3); 
+// upgradedAddThree(3, 2, 3); 
+// upgradedAddThree(4, 2, 3); 
+// upgradedAddThree(5, 2, 3); 
+// upgradedAddThree(6, 2, 3); 
+// upgradedAddThree(1, 2, 3);
+
+
 
 const sendSignal = (signalOrder, delay) => console.log("Сигнал отправлен", signalOrder, delay);
 const upgradedSendSignal = debounceDecoratorNew(sendSignal, 2000);
