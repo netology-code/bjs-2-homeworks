@@ -1,8 +1,9 @@
+//Задача № 1
 function cachingDecoratorNew(func) {
-  // Ваш код
+  
 }
 
-
-function debounceDecoratorNew(func) {
-  // Ваш код
+//Задача № 2
+function debounceDecoratorNew(func, delay) {
+  
 }

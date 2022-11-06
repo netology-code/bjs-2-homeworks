@@ -1,10 +1,19 @@
 function Student(name, gender, age) {
-    // Ваш код
-
+  
 }
 
 Student.prototype.setSubject = function (subjectName) {
-  //ваш код
+  
 }
 
-// ваш код для остальных методов
+Student.prototype.addMarks = function (...marks) {
+  
+}
+
+Student.prototype.getAverage = function () {
+  
+}
+
+Student.prototype.exclude = function (reason) {
+  
+}
