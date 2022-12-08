@@ -2,7 +2,6 @@
 function solveEquation(a, b, c) {
   let arr = [];
   let discrim = Math.pow(b, 2) - 4 * a * c;
-
   if (discrim >= 0 && a !== 0) {
     if (discrim === 0) {
       arr.push(-b / (2 * a));
