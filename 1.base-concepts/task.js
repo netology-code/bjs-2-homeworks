@@ -15,13 +15,11 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) {
+  if (isNaN(percent) || isNaN(contribution) || isNaN(amount) || isNaN(countMonths)) 
     return false;
-  } else {
-      let monthRate = percent / 100 / 12;  // месячная ставка
-      let bodyOfTheLoan = amount - contribution; //тело кредита
-      let monthPayment = bodyOfTheLoan * (monthRate + (monthRate / (Math.pow(1 + monthRate, countMonths) - 1)));
-      let totalCount = monthPayment * countMonths;  
-      return parseFloat(totalCount.toFixed(2));
-  }
+  let monthRate = percent / 100 / 12;  // месячная ставка
+  let bodyOfTheLoan = amount - contribution; //тело кредита
+  let monthPayment = bodyOfTheLoan * (monthRate + (monthRate / (Math.pow(1 + monthRate, countMonths) - 1)));
+  let totalCount = monthPayment * countMonths;  
+  return parseFloat(totalCount.toFixed(2));
 }
