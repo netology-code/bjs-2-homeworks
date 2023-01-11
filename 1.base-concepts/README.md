@@ -50,20 +50,19 @@
 ## Требования по выполнению домашней работы
 
 1. Все тесты успешно выполняются.
-1. Соблюдается [кодстайл](https://github.com/netology-code/codestyle/tree/master/js#%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-javascript-%D0%BA%D0%BE%D0%B4%D0%B0).
-1. Решение загружено в форкнутый репозиторий GitHub.
-1. Решение опубликовано в GitHub Pages.
+2. Соблюдается [кодстайл](https://github.com/netology-code/codestyle/tree/master/js#%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-javascript-%D0%BA%D0%BE%D0%B4%D0%B0).
+3. Решение загружено в форкнутый репозиторий GitHub.
+4. Решение опубликовано в GitHub Pages.
 
 ## Решение задач
 1. Откройте файл `task.js` в вашем редакторе кода и выполните задание. <br>
-1. Проверьте соблюдение [кодстайла](https://github.com/netology-code/codestyle/tree/master/js#%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-javascript-%D0%BA%D0%BE%D0%B4%D0%B0).
-1. Вы можете написать функцию `testCase` для проверки вашей работы. <br>
-1. Откройте файл `test-runer.html` в браузере и убедитесь, что все тесты выполняются. <br>
-1. Добавьте файл `task.js` в индекс `git` с помощью команды `git add %file-path%`, где `%file-path%` — путь до целевого файла `git add ./1.base-concepts/task.js`. <br>
-1. Сделайте коммит, используя команду `git commit -m '%comment%'`, где `%comment%`, — это произвольный комментарий к вашему коммиту `git commit -m 'Первое задание полностью готово'`. <br>
-1. Опубликуйте код в репозиторий `homeworks` с помощью команды `git push -u origin main`.<br>
-1. Пришлите ссылку на репозиторий через личный кабинет на сайте [Нетологии](https://netology.ru/).<br>
-1. Пришлите ссылку на страницу GitHub Pages — страницу с автотестами: `https://%USERNAME%.github.io/bjs-2-homeworks/1.base-concepts/index`.
+2. Проверьте соблюдение [кодстайла](https://github.com/netology-code/codestyle/tree/master/js#%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-javascript-%D0%BA%D0%BE%D0%B4%D0%B0).
+3. Вы можете написать функцию `testCase` для проверки вашей работы. <br>
+4. Добавьте файл `task.js` в индекс `git` с помощью команды `git add %file-path%`, где `%file-path%` — путь до целевого файла `git add ./1.base-concepts/task.js`. <br>
+5. Сделайте коммит, используя команду `git commit -m '%comment%'`, где `%comment%`, — это произвольный комментарий к вашему коммиту `git commit -m 'Первое задание полностью готово'`. <br>
+6. Опубликуйте код в репозиторий `homeworks` с помощью команды `git push -u origin main`.<br>
+7. Пришлите ссылку на репозиторий через личный кабинет на сайте [Нетологии](https://netology.ru/).<br>
+8. Пришлите ссылку на страницу GitHub Pages — страницу с автотестами: `https://%USERNAME%.github.io/bjs-2-homeworks/1.base-concepts/index`.
 
 **_Никакие файлы прикреплять не нужно._**
 
