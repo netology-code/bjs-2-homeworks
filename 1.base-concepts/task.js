@@ -1,28 +1,28 @@
 "use strict";
 function solveEquation(a,b,c) {
-  let arr=[];
-  let d = (b**2-4*a*c);
-
-  if (d>0){
-   let root1 = (-b + Math.sqrt(d) )/(2*a);
-   let root2 =  (-b - Math.sqrt(d) )/(2*a);
-    arr.push(root1,root2);
-    console.log(arr);
-    return arr;
+  const result = [];
+  const discriminant = (b**2-4*a*c);
+  
+  if (discriminant > 0) {
+   let root1 = (-b + Math.sqrt(discriminant) )/(2*a);
+   let root2 =  (-b - Math.sqrt(discriminant) )/(2*a);
+    result.push(root1,root2);
+    console.log(result);
+    return result;
   }
 
-if (d === 0){
-  let root0= -b/(2*a);
-  arr.push(root0);
-    console.log(arr);
-  return arr;
+  if (discriminant === 0){
+  let root0 = -b/(2*a);
+  result.push(root0);
+    console.log(result);
+  return result;
 }
 
 else {
-  console.log("корней нет"+ arr)
+  console.log("корней нет"+ result)
 }
 
-  return arr; 
+  return result; 
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
