@@ -74,10 +74,6 @@ arrOfArr = [[0, 0, 0], [-1, -100]];
 makeWork(arrOfArr, worker); // 0
 
 //worker2
-console.log(worker2([-10, -20, -40])); // -40 - (-10) = -30 => 30
-console.log(worker2([10, 20, 30])); // 30 - 10 = 20
-arrOfArr = [[-10, -20, -40], [10, 20, 30]];
-makeWork(arrOfArr, worker2); // 30
 
 console.log(worker2([0, 0, 0])); // 0 - 0 = 0
 console.log(worker2([-1, -99])); // -99 - (-1) = -98 => 98
