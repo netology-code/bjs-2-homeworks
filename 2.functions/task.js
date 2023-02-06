@@ -1,6 +1,6 @@
 function getArrayParams(arr) {
-    let min = Infinity;
-    let max = -Infinity;
+    let min = arr[0];
+    let max = min;
     let sum = 0;
     let avg;
 
@@ -16,8 +16,8 @@ function getArrayParams(arr) {
     return {min: +min.toFixed(2), max: +max.toFixed(2), avg: +avg.toFixed(2),};
 }
 
-console.log(getArrayParams([-99, 99, 10])) // { min: -99, max: 99, avg: 3.33 }
-console.log(getArrayParams([1, 2, 3, -100, 10]))  // { min: -100, max: 10, avg: -16.80 }
+console.log(getArrayParams([-10])) // { min: -99, max: 99, avg: 3.33 }
+console.log(getArrayParams([1]))  // { min: -100, max: 10, avg: -16.80 }
 
 
 // Задание 2
@@ -52,8 +52,8 @@ console.log(makeWork(arrOfArr, worker)); // 15
 // Задание 3
 function worker2(arr) {
     let dist;
-    let min = Infinity;
-    let max = -Infinity;
+    let min = arr[0];
+    let max = min;
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] > max) {
             max = arr[i]
@@ -63,7 +63,6 @@ function worker2(arr) {
     }
     dist = max - min;
     dist = Math.abs(dist);
-
     return dist;
 }
 
