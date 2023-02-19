@@ -50,13 +50,13 @@ function worker2(arr) {
   let arrMin = arr[0];
   let arrMax = arr[0];
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i]<arrMin){
+    if (arr[i] < arrMin) {
       arrMin = arr[i];
     }
-    if (arr[i]>arrMax){
-      arrMax=arr[i];
+    if (arr[i] > arrMax) {
+      arrMax = arr[i];
     }
   }
-  diff = Math.abs (arrMax-arrMin);
+  diff = Math.abs(arrMax - arrMin);
   return diff;
 }
