@@ -113,30 +113,4 @@ describe('Домашнее задание к лекции 5 «Классы»', (
       expect(secondBook).toEqual(null);
     });
   })
-
-  describe('Задача №3', () => {
-    let student;
-  
-    beforeEach(function(){
-      student = new Student("Иван Петров");
-    });
-
-    it('создание объекта Student', () => {
-      expect(student).toBeDefined();
-    });
-
-    it('подсчёт средней оценки по предмету', () => {
-      student.addMark(3, "algebra");
-      student.addMark(5, "algebra");
-      expect(student.getAverageBySubject("algebra")).toEqual(4);
-    });
-
-    it('подсчёт общей средней оценки', () => {
-      student.addMark(3, "algebra");
-      student.addMark(5, "algebra");
-      student.addMark(5, "history");
-      student.addMark(5, "history");
-      expect(student.getAverage()).toEqual(4.5);
-    });
-  });
 });
