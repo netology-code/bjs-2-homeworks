@@ -12,7 +12,7 @@ function solveEquation(a, b, c) {
 			(-b - Math.sqrt(discriminant)) / (2 * a)
 		);
 	}
-	return arr;
+	return arr
 }
 
 console.log(solveEquation(1, 2, 1));
