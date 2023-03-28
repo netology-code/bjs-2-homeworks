@@ -12,10 +12,8 @@ function solveEquation(a, b, c) {
 			(-b - Math.sqrt(discriminant)) / (2 * a)
 		);
 	}
-	return arr
+	return arr;
 }
-
-console.log(solveEquation(1, 2, 1));
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	const percentStage = percent / 100 / 12;
@@ -31,5 +29,3 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
 	return totalAmount;
 }
-
-console.log(calculateTotalMortgage(10, 1000, 50000, 12));
