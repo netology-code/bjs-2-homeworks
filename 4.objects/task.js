@@ -33,4 +33,4 @@ Student.prototype.exclude = function (reason) {
   delete this.marks;
   delete this.subject;
   this.excluded = reason;
-}
+};
