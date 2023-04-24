@@ -13,7 +13,9 @@ Student.prototype.addMarks = function (...marksToAdd) {
   if (!this.marks) {
     this.marks = [];
   }
-  this.marks.push(...marksToAdd);
+  if (!this.excluded) {
+    this.marks.push(...marksToAdd);
+  }
 }
 
 Student.prototype.getAverage = function () {
