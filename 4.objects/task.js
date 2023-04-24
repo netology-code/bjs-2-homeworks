@@ -52,6 +52,7 @@ console.log(student1);
 
 let student2 = new Student("Артём", "мужской", 25);
 student2.setSubject("Geometry");
-student2.exclude('плохая учёба')
-console.log(student2)
+student2.exclude('плохая учёба');
+console.log(student2.getAverage()); // undefined
+console.log(student2);
 // {name: "Артём", gender: "мужской", age: 25, excluded: "плохая учёба"}
