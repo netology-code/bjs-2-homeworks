@@ -10,16 +10,15 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marksToAdd) {
+  if (this.excluded) {
+    console.log(`Студент ${this.name} отчислен. Добавление оценок невозможно.`);
+    return;
+  }
   if (!this.marks) {
     this.marks = [];
   }
-  if (!this.excluded) {
-    this.marks.push(...marksToAdd);
-  } else {
-    console.log(`Студент ${this.name} отчислен. Добавление оценок невозможно.`);
-  }
+  this.marks.push(...marksToAdd);
 }
-
 Student.prototype.getAverage = function () {
   if (!this.marks) {
     return undefined;
