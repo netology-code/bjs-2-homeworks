@@ -32,8 +32,10 @@ Student.prototype.getAverage = function () {
 }
 
 Student.prototype.exclude = function (reason) {
+  if (this.marks) {
+    delete this.marks;
+  }
   delete this.subject;
-  delete this.marks;
   this.excluded = reason;
 }
 
