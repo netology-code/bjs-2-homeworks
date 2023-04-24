@@ -14,32 +14,23 @@ Student.prototype.addMarks = function (...marksToAdd) {
     console.log(`Студент ${this.name} отчислен. Добавление оценок невозможно.`);
     return;
   }
-  if (!this.marks) {
-    this.marks = [];
-  }
   this.marks.push(...marksToAdd);
 }
+
 Student.prototype.getAverage = function () {
-  if (!this.marks) {
-    return undefined;
-  }
   if (this.marks.length === 0) {
     return 0;
   }
-  if (!this.excluded && this.marks.length > 0) {
+  if (this.marks.length > 0) {
     const sum = this.marks.reduce(function (accumulator, currentValue) {
       return accumulator + currentValue;
     });
     return +(sum / this.marks.length).toFixed(1);
   }
-  return undefined;
 }
 
 Student.prototype.exclude = function (reason) {
-  if (this.marks) {
-    delete this.marks;
-  }
+  delete this.marks;
   delete this.subject;
   this.excluded = reason;
 }
-
