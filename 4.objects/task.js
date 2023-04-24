@@ -22,10 +22,13 @@ Student.prototype.getAverage = function () {
   if (!this.marks || this.marks.length === 0) {
     return 0;
   }
-  const sum = this.marks.reduce(function (accumulator, currentValue) {
-    return accumulator + currentValue;
-  });
-  return +(sum / this.marks.length).toFixed(1);
+  if (!this.excluded) {
+    const sum = this.marks.reduce(function (accumulator, currentValue) {
+      return accumulator + currentValue;
+    });
+    return +(sum / this.marks.length).toFixed(1);
+  }
+  return undefined;
 }
 
 Student.prototype.exclude = function (reason) {
