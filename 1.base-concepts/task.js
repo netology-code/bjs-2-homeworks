@@ -1,6 +1,5 @@
 "use strict"
 function solveEquation(a, b, c) {
-  let arr = [];
   let discriminant = b**-4*a*c;
 
   let arr = [discriminant];
