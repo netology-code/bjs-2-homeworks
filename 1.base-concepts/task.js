@@ -11,11 +11,13 @@ function solveEquation(a, b, c) {
   }
   return arr;
 }
+solveEquation(1,2,3);
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  percentMounth = percent / 1200;
-  creditBody = amount - contribution;
-  mounthPay = creditBody * (percentMounth + (percentMounth / (((1 + percentMounth) ** countMonths) - 1)));
-  summToPay = contribution + creditBody + mounthPay * countMonths;
+ let percentMounth = percent / 1200;
+ let creditBody = amount - contribution;
+ let mounthPay = creditBody * (percentMounth + (percentMounth / (((1 + percentMounth) ** countMonths) - 1)));
+ let summToPay = contribution + creditBody + mounthPay * countMonths;
   return summToPay;
 }
+calculateTotalMortgage(5,5,7,60);
