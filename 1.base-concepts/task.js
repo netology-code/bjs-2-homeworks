@@ -16,10 +16,12 @@ solveEquation(1,2,3);
 
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
- let percentMounth = percent / 1200;
+ percent=percent/100;    
+ let percentMounth = percent/12;
  let creditBody = amount - contribution;
  let mounthPay = creditBody * (percentMounth + (percentMounth / (((1 + percentMounth) ** countMonths) - 1)));
- let summToPay = (creditBody + mounthPay * countMonths).toFixed(2);
+ let summToPay = (contribution + mounthPay * countMonths).toFixed(2);
+ console.log(summToPay);
   return summToPay;
 }
 
