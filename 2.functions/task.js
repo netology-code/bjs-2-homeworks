@@ -70,8 +70,9 @@ const arr = [[10, 10, 11, 20, 10], [67, 10, 2, 39, 88], [72, 75, 51, 87, 43], [3
 function makeWork (arrOfArr, func) {
  let maxWorkerResult=func(...arrOfArr[0]);
  for (let i=1; i<[...arrOfArr].length; i++) {
-   if (func(...arrOfArr[i])>maxWorkerResult) {
-    maxWorkerResult=func(...arrOfArr[i]);
+   const funcResult=func(...arrOfArr[i];
+   if (funcResult>maxWorkerResult) {
+    maxWorkerResult=funcResult;
    }
   }
   return maxWorkerResult;
