@@ -20,19 +20,17 @@ solveEquation(1, 2, 8);
 // код для задачи №2 писать здесь
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-/* Описание переменных
-percent: процент
-contribution: взнос
-amount: сумма
-countMonths: кол-во месяцев
-BodyCredit: тело кредита
-PayMount: ежемесячный платеж
-*/
-let BodyCredit=amount-contribution;
-let PayMount= BodyCredit * (percent+(percent/(((1+percent)**countMonths)-1)));
-let PayMountRounded=PayMount.toFixed(2);
-console.log(PayMountRounded);
-
-
+  /* Описание переменных
+  percent: процент
+  contribution: взнос
+  amount: сумма
+  countMonths: кол-во месяцев
+  BodyCredit: тело кредита
+  PayMount: ежемесячный платеж
+  */
+  let BodyCredit = amount - contribution;
+  let PayMount = BodyCredit * (percent + (percent / (((1 + percent) ** countMonths) - 1)));
+  let PayMountRounded = PayMount.toFixed(2);
+  console.log(PayMountRounded);
 }
-calculateTotalMortgage(15,0,10000,36);
+calculateTotalMortgage(15, 0, 10000, 36);
