@@ -30,7 +30,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   */
   let perc = (percent) / 100 / 12;
   let BodyCredit = amount - contribution;
-  let PayMount = BodyCredit * (perc + (perc / (((1 + percent) ** countMonths) - 1)));
+  let PayMount = BodyCredit * (perc + (perc / (((1 + perc) ** countMonths) - 1)));
   let PayMountRounded = PayMount.toFixed(2);
   console.log(PayMountRounded);
 }
