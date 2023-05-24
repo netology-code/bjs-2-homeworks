@@ -1,24 +1,41 @@
-function getArrayParams(...arr) {
-
+// Задание 1
+function getArrayParams(arr) {
+  let min, max, sum, avg;
+  sum = 0;
+  min = max = arr[0];
+  arr.forEach(element => {
+    sum += element;
+    if (min >= element ) {min = element};
+    if (max <= element ) {max = element};
+  });
+  avg = Number((sum/arr.length).toFixed(2));
   return { min: min, max: max, avg: avg };
 }
 
-function summElementsWorker(...arr) {
-
+// Задание 2
+function worker(arr) {
+  let sum =0;
+  arr.forEach(element => {sum += element});
+  return sum;
 }
 
-function differenceMaxMinWorker(...arr) {
-
+function makeWork(arrOfArr, func) {
+  let max =0;
+  arrOfArr.forEach(element => {
+    let tmp = func(element);
+    if (max <= tmp ) {max = tmp};
+  });
+  return max;
 }
 
-function differenceEvenOddWorker(...arr) {
-
-}
-
-function averageEvenElementsWorker(...arr) {
-
-}
-
-function makeWork (arrOfArr, func) {
-
+// Задание 3
+function worker2(arr) {
+  let min, max, d;
+  min = max = d = arr[0];
+  arr.forEach(element => {
+    if (min >= element ) {min = element};
+    if (max <= element ) {max = element};
+  });
+  d = max-min;
+  return Math.abs(d);
 }
