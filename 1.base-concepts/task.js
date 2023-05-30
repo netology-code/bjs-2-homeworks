@@ -21,6 +21,8 @@ solveEquation(1, 2, 8);
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   /* Описание переменных
+
+
   percent: процент
   contribution: взнос
   amount: сумма
@@ -31,7 +33,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   let perc = (percent) / 100 / 12;
   let BodyCredit = amount - contribution;
   let PayMount = BodyCredit * (perc + (perc / (((1 + perc) ** countMonths) - 1)));
-  let PayMountRounded = PayMount.toFixed(2);
+  let PayMountRounded = +PayMount.toFixed(2);
   console.log(PayMountRounded);
 }
 calculateTotalMortgage(15, 0, 10000, 36);
