@@ -19,8 +19,11 @@ const people = [
 
 ]
 function getUsersNamesInAgeRange(users, gender) {
-    let result = users.filter(item => item.gender == gender).map(item => item.age).reduce((a, b) => (a + b) / users.length).toFixed();
-    return result;
+
+    let len = users.filter(item => item.gender == gender);
+    let result = len.map(item =>item.age).reduce((a, b) => a + b);
+   
+    return (result / len.length).toFixed();
 
 }
 getUsersNamesInAgeRange(people, "женский");
