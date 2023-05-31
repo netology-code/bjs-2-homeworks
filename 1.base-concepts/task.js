@@ -25,13 +25,13 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   contribution: взнос
   amount: сумма
   countMonths: кол-во месяцев
-  BodyCredit: тело кредита
-  PayMount: ежемесячный платеж
+  bodyCredit: тело кредита
+  payMount: ежемесячный платеж
   */
-  let Perc = (percent) / 100 / 12;
-  let BodyCredit = amount - contribution;
-  let PayMount = BodyCredit * (Perc + (Perc / (((1 + Perc) ** countMonths) - 1)));
-  let PayMountRounded = +PayMount;
- return (PayMountRounded * countMonths).toFixed(2);
+  let perc = (percent) / 100 / 12;
+  let bodyCredit = amount - contribution;
+  let payMount = bodyCredit * (perc + (perc / (((1 + perc) ** countMonths) - 1)));
+  let payMountRounded = payMount;
+ return +(payMountRounded * countMonths).toFixed(2);
 }
 calculateTotalMortgage(15, 0, 10000, 36);
