@@ -67,6 +67,7 @@ if(student_2.hasOwnProperty("marks")) {
 
 }
 
+4
 student_1.getAverage();
 student_2.getAverage();
 
