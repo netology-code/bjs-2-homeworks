@@ -1,30 +1,30 @@
+"use strict"
+
 function Student(name, gender, age) {
-  
+    this.name = name;
+    this.gender = gender;
+    this.age = age;
 }
 
-Student.prototype.setSubject = function (subjectName) {
-  
+let student_1 = new Student("Василиса", "женский", 19);
+student_1.marks = [];
+let student_2 = new Student("Олег", "мужской", 27);
+student_2.marks = [];
+
+Student.prototype.setSubject = function(subjectName) {
+    this.subject = subjectName;
+}
+student_1.setSubject("Algebra");
+student_2.setSubject("Fizika");
+
+if(student_1.hasOwnProperty("marks") || student_2.hasOwnProperty("marks")) {
+    Student.prototype.addMarks = function(...marksToAdd) {
+        this.marks = marksToAdd;
+    }
 }
 
-Student.prototype.addMarks = function (...marks) {
-  
-}
+student_1.addMarks(4, 5, 4, 5);
 
-Student.prototype.getAverage = function () {
-  
-}
+console.log(student_1);
+console.log(student_2);
 
-Student.prototype.exclude = function (reason) {
-  
-}
-let student1 = new Student("Василиса", "женский", 19);
-student1.setSubject("Algebra");
-console.log(student1.getAverage()); // 0
-student1.addMarks(4, 5, 4, 5);
-console.log(student1.getAverage()); // 4.5
-console.log(student1);
-// {age: 19, gender: "женский", marks: [4, 5, 4, 5], name: "Василиса", subject: "Algebra"}
-let student2 = new Student("Артём", "мужской", 25);
-student2.setSubject("Geometry");
-student2.exclude('плохая учёба')
-console.log(student2)
