@@ -16,6 +16,9 @@ student.prototype.setSubject = function (subjectName) {
 student.prototype.addMarks = function (...marksToAdd)
 
 {
+    if(student.exclude.lenght>0 || marks.lenght ==0){
+    console.log(`Добавление оценок не возможно причина ${reason}`)
+    }
    this.marks = marksToAdd;
   }
 
@@ -28,7 +31,6 @@ student.prototype.addMarks = function (...marksToAdd)
     else{
         return sum;
     }
-    
   }
   student.prototype.exclude = function exclude(reason){
     if(marks.lenght == 0){
@@ -38,6 +40,7 @@ console.log(`Вы отчислены ${reason}`);
         student.exclude = 'reason';
 
     }
+    this.exclude = exclude;
   }
 
 // "use strict"
