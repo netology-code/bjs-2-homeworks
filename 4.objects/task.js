@@ -12,7 +12,8 @@ let studentSecond = new student("Артём", "мужской", 25);
 studentSecond.marks = [];
 
 //Пункт 2. Создание метода setSubject(subjectName)
-
+ 
+r
 student.prototype.setSubject = function (subjectName) {
    this.subjectName = subjectName;
   }
