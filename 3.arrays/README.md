@@ -23,7 +23,7 @@ compareArrays([8, 1, 2], [8, 1, 2]) // true
 3. Используйте метод `reduce` для формирования среднего значения возраста.
 
 ```js
-let result = arr.filter(...).map(...).reduce(...)
+let result = arr.filter(item => item).map(...).reduce(...)
 ```
 
 Пример вызова:
