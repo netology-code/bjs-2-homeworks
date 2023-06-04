@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "ms-edgedevtools.vscode-edge-devtools"
+        "ms-edgedevtools.vscode-edge-devtools",
+        "github.vscode-pull-request-github"
     ]
 }
