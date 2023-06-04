@@ -13,14 +13,22 @@ student.prototype.setSubject = function (subjectName) {
    this.subjectName = subjectName;
   }
 
-student.prototype.addMarks = function (...marksToAdd) {
+student.prototype.addMarks = function (...marksToAdd)
+
+{
    this.marks = marksToAdd;
   }
 
   student.prototype.getAverage = function getAverage(...Average){
     let sum = 0;
-    Average.forEach(element => { sum += element });
-    return sum;
+    if(marks === undefined || marks.lenght > 0){
+        Average.forEach(element => { sum += element });
+        return sum;    
+    }
+    else{
+        return sum;
+    }
+    
   }
   student.prototype.exclude = function exclude(reason){
     if(marks.lenght == 0){
