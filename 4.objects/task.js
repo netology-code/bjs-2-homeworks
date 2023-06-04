@@ -7,9 +7,9 @@
 // Пункт 1 Создание новых обьектов
 let studentfirst = new student("Василиса", "женский", 19);
 studentfirst.marks = [];
-let studentSecond = new student("Артём", "мужской", 25);
-studentfirst.marks = [];
 
+let studentSecond = new student("Артём", "мужской", 25);
+studentSecond.marks = [];
 
 //Пункт 2. Создание метода setSubject(subjectName)
 
@@ -47,9 +47,10 @@ console.log(`Вы отчислены ${reason}`);
 
     }
     this.exclude = exclude;
+    return reason;
   }
-studentfirst.addMarks;
-console.log(studentSecond);
+
+
 
 // "use strict"
 
