@@ -5,21 +5,21 @@
     this.age = age;
 }
 // Пункт 1 Создание новых обьектов
-let studentfirst = new student("Василиса", "женский", 19);
+let studentfirst = new Student("Василиса", "женский", 19);
 studentfirst.marks = [];
 
-let studentSecond = new student("Артём", "мужской", 25);
+let studentSecond = new Student("Артём", "мужской", 25);
 studentSecond.marks = [];
 
 //Пункт 2. Создание метода setSubject(subjectName)
  
 r
-student.prototype.setSubject = function (subjectName) {
+Student.prototype.setSubject = function (subjectName) {
    this.subjectName = subjectName;
   }
 
 // Пункт 4. Создание addMarks(...marksToAdd)
-student.prototype.addMarks = function (...marksToAdd)
+Student.prototype.addMarks = function (...marksToAdd)
 {
     if(student.exclude.lenght>0 || marks.lenght ==0){
     console.log(`Добавление оценок не возможно причина ${reason}`)
@@ -28,7 +28,7 @@ student.prototype.addMarks = function (...marksToAdd)
   }
 //Пункт 5. Создание метода getAverage()
 
-  student.prototype.getAverage = function getAverage(...Average){
+Student.prototype.getAverage = function getAverage(...Average){
     let sum = 0;
     if(marks!= undefined || marks.lenght > 0){
         Average.forEach(element => { sum += element });
@@ -39,12 +39,12 @@ student.prototype.addMarks = function (...marksToAdd)
     }
   }
  //Пункт 6. Создание метода exclude(reason)
-  student.prototype.exclude = function exclude(reason){
+ Student.prototype.exclude = function exclude(reason){
     if(marks.lenght == 0){
 console.log(`Вы отчислены ${reason}`);
-        delete student.subject;
-        delete student.marks;
-        student.exclude = reason;
+        delete Student.subject;
+        delete Student.marks;
+        Student.exclude = reason;
 
     }
     this.exclude = exclude;
