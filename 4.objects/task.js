@@ -7,28 +7,26 @@ function Student(name, gender, age) {
    this.marks = [];
 }
 
-let student_1 = new Student("Василиса", "женский", 19);
-let student_2 = new Student("Олег", "мужской", 27);
-let student_3 = new Student("Маша", "женский", 22);
+let tudent1 = new Student("Василиса", "женский", 19);
+let student2 = new Student("Артём", "мужской", 25);
 
 
 Student.prototype.setSubject = function(subjectName) {
    this.subject = subjectName;
 }
-student_1.setSubject("Algebra");
-student_2.setSubject("Fizika");
-student_3.setSubject("Algebra");
+tudent1.setSubject("Algebra");
+student2.setSubject("Geometry");
 
 Student.prototype.addMarks = function(...marksToAdd) {
    this.marks = marksToAdd;
 }
 
-if(student_1.hasOwnProperty("marks")){
-   student_1.addMarks(4, 5, 5, 5);
+if(tudent1.hasOwnProperty("marks")){
+   tudent1.addMarks(4, 5, 4, 5);
 }
 
-if(student_2.hasOwnProperty("marks")){
-   student_2.addMarks(4, 4, 4, 5);
+if(student2.hasOwnProperty("marks")){
+   student2.addMarks(4, 4, 4, 5);
 }
 
 Student.prototype.getAverage = function() {
@@ -44,16 +42,12 @@ Student.prototype.getAverage = function() {
 
 }
 
-if(student_1.hasOwnProperty("marks")) {
-   student_1.getAverage();
+if(tudent1.hasOwnProperty("marks")) {
+   tudent1.getAverage();
 }
 
-if(student_2.hasOwnProperty("marks")) {
-   student_2.getAverage();
-}
-
-if(student_3.hasOwnProperty("marks")) {
-   student_3.getAverage();
+if(student2.hasOwnProperty("marks")) {
+   student2.getAverage();
 }
 
 Student.prototype.exclude = function(reason) {
@@ -62,7 +56,6 @@ Student.prototype.exclude = function(reason) {
    this.exclude = reason;
 }
 
-student_3.exclude("Плохая учеба");
-console.log(student_1);
-console.log(student_2);
-console.log(student_3);
+student2.exclude("Плохая учеба");
+console.log(tudent1);
+console.log(student2);
