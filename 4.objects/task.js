@@ -1,5 +1,6 @@
 "use strict"
 
+
 function Student(name, gender, age) {
    this.name = name;
    this.gender = gender;
