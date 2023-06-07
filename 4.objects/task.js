@@ -3,41 +3,56 @@
     this.name = name;
     this.gender = gender;
     this.age = age;
+    this.marks = [];
+
 }
 // Пункт 1 Создание новых обьектов
-let studentfirst = new Student("Василиса", "женский", 19);
-studentfirst.marks = [];
-
-let studentSecond = new Student("Артём", "мужской", 25);
-studentSecond.marks = [];
+let student1 = new Student("Василиса", "женский", 19);
+let student2 = new Student("Артём", "мужской", 25);
 
 //Пункт 2. Создание метода setSubject(subjectName)
- 
-r
+
 Student.prototype.setSubject = function (subjectName) {
-   this.subjectName = subjectName;
+   this.subject = subjectName;
   }
+  student1.setSubject('Геометрия');
 
 // Пункт 4. Создание addMarks(...marksToAdd)
 Student.prototype.addMarks = function (...marksToAdd)
 {
-    if(student.exclude.lenght>0 || marks.lenght ==0){
-    console.log(`Добавление оценок не возможно причина ${reason}`)
+  for(var key in this.marks){
+    if (this.marks.hasOwnProrerty(key)) {
+      console.log("Пользователь отчислен");
     }
-   this.marks = marksToAdd;
+     else{
+      this.marks = marksToAdd;
+     }
   }
+  
+  }
+  student1.addMarks(5);
+  student2.addMarks(6,6);
 //Пункт 5. Создание метода getAverage()
 
-Student.prototype.getAverage = function getAverage(...Average){
-    let sum = 0;
-    if(marks!= undefined || marks.lenght > 0){
-        Average.forEach(element => { sum += element });
-        return sum;    
-    }
-    else{
-        return sum;
-    }
-  }
+// Student.prototype.getAverage = function getAverage(){
+//     let sum = 0;  
+//     if (!student1.hasOwnProperty("marks")) {
+//       return 0;
+//     }
+//     else if  (!Student2.hasOwnProperty("marks")) {
+//       return 0;  
+//     }
+//     else{
+//       for (let i = 0; i< this.marks.length; i++){
+//         sum += this.marks[i];
+//         return sum / this.marks.length;
+      
+//      }
+     
+//     }
+//   }
+//   console.log(student1.getAverage());
+//   student2.getAverage();
  //Пункт 6. Создание метода exclude(reason)
  Student.prototype.exclude = function exclude(reason){
     if(marks.lenght == 0){
