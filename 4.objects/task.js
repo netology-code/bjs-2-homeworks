@@ -1,5 +1,5 @@
 //Функция конструктор
- function student(name, gender, age){
+ function Student(name, gender, age){
     this.name = name;
     this.gender = gender;
     this.age = age;
@@ -44,7 +44,7 @@ student.prototype.addMarks = function (...marksToAdd)
 console.log(`Вы отчислены ${reason}`);
         delete student.subject;
         delete student.marks;
-        student.exclude = 'reason';
+        student.exclude = reason;
 
     }
     this.exclude = exclude;
