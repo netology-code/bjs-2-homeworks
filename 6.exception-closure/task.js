@@ -33,18 +33,20 @@ class Triangle {
         }       
     }
 
-
+    
+    
 getPerimeter() {
     let p = 0;
    p = (this.a + this.b + this.c)/2;
     this.p;
 }
-
 getArea() {
     let S = 0;
-    return S = Number(Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c)).toFixed(3));
+return S = Number(Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c)).toFixed(3));
+
 }
 }
+
 
 
 function getTriangle(a, b, c) {
@@ -62,3 +64,4 @@ function getTriangle(a, b, c) {
         }
     }
 }
+console.log(getTriangle(1, 10, 3));

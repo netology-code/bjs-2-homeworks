@@ -64,7 +64,7 @@ function testCase() {
     phoneAlarm.addClock('08:02', () => console.log('Подъем'), 3);
     phoneAlarm.printAlarms();
     phoneAlarm.removeClock(3);
-    phoneAlarm.removeClock(1);
+    phoneAlarm.removeClock();
     phoneAlarm.removeClock(2);
     phoneAlarm.printAlarms();
 }
