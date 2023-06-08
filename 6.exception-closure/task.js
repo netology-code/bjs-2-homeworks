@@ -54,14 +54,14 @@ function getTriangle(a, b, c) {
         return new Triangle(a, b, c);
     }
     catch (err) {
-        return {
+        return new Object({
             getPerimeter() {
                 return 'Ошибка! Треугольник не существует';
             },
             getArea() {
                 return 'Ошибка! Треугольник не существует';
             }
-        }
+        });
     }
 }
 console.log(getTriangle(1, 10, 3));
