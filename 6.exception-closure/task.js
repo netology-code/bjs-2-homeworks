@@ -47,8 +47,6 @@ return S = Number(Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c)).toFi
 }
 }
 
-
-
 function getTriangle(a, b, c) {
     try {
         return new Triangle(a, b, c);
