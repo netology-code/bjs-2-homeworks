@@ -19,27 +19,20 @@ function solveEquation(a, b, c) {
 }
 
 function calculateTotalMortgage(percent, contribution, amount, date) {
-  let totalAmount;
-  percent = +percent;
-  contribution = +contribution;
-  amount = +amount;
-  date = +date;
-  if (typeof percent === `string`) {
-    totalAmount = `Параметр "Процентная ставка" содержит неправильное значение ${percent}`;
-  } else if (typeof contribution === `string`) {
-    totalAmount = `Параметр "Начальный взнос" содержит неправильное значение ${contribution}`;
-  } else if (typeof amount === `string`) {
-    totalAmount = `Параметр "Общая стоимость" содержит неправильное значение ${amount}`;
-  } else if (typeof date === `string`) {
-    totalAmount = `Параметр "Сроки ипотеки" содержит неправильное значение ${date}`;
-  };
-  let lianAmount = amount - contribution;
-  let timeNow = new Date();
-  let loanTerm = date - timeNow;
-  loanTerm = loanTerm / 1000 / 60 / 60 / 24 / 30;
-  let monthlyPartPercent = (percent / 100) / 12;
-  let monthFee = lianAmount * (monthlyPartPercent + (monthlyPartPercent / (((1 + monthlyPartPercent) ** loanTerm) - 1)));
-  totalAmount = +(monthFee * loanTerm).toFixed(2);
-  console.log(totalAmount);
-  return totalAmount;
+   let totalAmount;
+		if (isNaN(percent)) {
+		return totalAmount = `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`;
+	} else if (isNaN(contribution)) {
+		return totalAmount = `Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`;
+	} else if (isNaN(amount)) {
+		return totalAmount = `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`;
+	} 	
+	let returnAmountBank = amount - contribution;	
+	let date1 = new Date();	
+	let diff = Date.parse(date) - Date.parse(date1);
+	let creditTerm = Math.ceil(diff / 1000 / 60 / 60 / 24 / 30.5);	
+	let P = percent / 12 / 100;
+	let monthlyFee = returnAmountBank * (P + (P / (((1 + P) ** creditTerm) - 1)));
+			totalAmount = creditTerm * monthlyFee;				
+    return Number(totalAmount.toFixed(2));	
 }
