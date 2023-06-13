@@ -18,21 +18,14 @@ function solveEquation(a, b, c) {
   return arr; // array
 }
 
-function calculateTotalMortgage(percent, contribution, amount, date) {
-   let totalAmount;
-		if (isNaN(percent)) {
-		return totalAmount = `Параметр "Процентная ставка" содержит неправильное значение "${percent}"`;
-	} else if (isNaN(contribution)) {
-		return totalAmount = `Параметр "Начальный взнос" содержит неправильное значение "${contribution}"`;
-	} else if (isNaN(amount)) {
-		return totalAmount = `Параметр "Общая стоимость" содержит неправильное значение "${amount}"`;
-	} 	
-	let returnAmountBank = amount - contribution;	
-	let date1 = new Date();	
-	let diff = Date.parse(date) - Date.parse(date1);
-	let creditTerm = Math.ceil(diff / 1000 / 60 / 60 / 24 / 30.5);	
-	let P = percent / 12 / 100;
-	let monthlyFee = returnAmountBank * (P + (P / (((1 + P) ** creditTerm) - 1)));
-			totalAmount = creditTerm * monthlyFee;				
-    return Number(totalAmount.toFixed(2));	
+function calculateTotalMortgage(percent, contribution, amount, countMonths) //процент (в диапазоне от 0 до 100), начальный взнос, сумма кредита, срок в месяцах 
+{
+	const P = percent / 100 / 12;
+	const S = amount - contribution;
+	const n = countMonths;
+	const monthlyPayment = S * (P + P / (Math.pow(1 + P, n) - 1));
+	const totalAmount = (monthlyPayment * n).toFixed(2);
+	let num = Number(totalAmount);
+	return num;
 }
+calculateTotalMortgage(10, 0, 50000, 12)
