@@ -153,7 +153,7 @@ setTimeout(() => {
 3. Вы можете написать функцию `testCase` для проверки вашей работы. <br>
 4. Добавьте файл `task.js` в индекс `git` с помощью команды `git add %file-path%`, где `%file-path%` — путь до целевого файла `git add ./8.decorators/task.js`. <br>
 5. Сделайте коммит, используя команду `git commit -m '%comment%'`, где `%comment%` — это произвольный комментарий к вашему коммиту `git commit -m 'Восьмое задание полностью готово'`. <br>
-6. Опубликуйте код в репозиторий `homeworks` с помощью команды `git push -u origin bjs-53`.<br>
+6. Опубликуйте код в репозиторий `homeworks` с помощью команды `git push -u origin main`.<br>
 7. На проверку пришлите 2 ссылки. На файл с решением (`task.js`) и на страницу GitHub Pages — страницу с автотестами: `https://%USERNAME%.github.io/bjs-2-homeworks/8.decorators`.
 
 **_Никакие файлы прикреплять не нужно._**
