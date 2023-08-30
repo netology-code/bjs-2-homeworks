@@ -1,36 +1,42 @@
 /* Задача №1 */
 "use strict"
 function solveEquation(a, b, c) {
-  const discriminant = b**2 - 4 * a * c;
-  if (discriminant > 0){
-      return [(- b + Math.sqrt(discriminant)) / (2 * a), (- b - Math.sqrt(discriminant)) / (2 * a)];
-  } else if (discriminant === 0) {
-      return [- b / (2 * a)];
+  let arr = [];
+  let D = (b ** 2) - (4 * a * c);
+       if (D < 0) {
+            arr.push();
+       } else if (D == 0) {
+          let quadraticRoots = -b/(2*a);
+              arr.push(quadraticRoots);
+       } else if (D > 0){
+    let tmp = [];
+          let firstRoot = (-b + Math.sqrt(D)) / (2 * a);
+          let secondRoot = (-b - Math.sqrt(D)) / (2 * a);
+               arr.push(firstRoot, secondRoot);
   }
-  return [];
+   return arr;
 }
-
 
 /* Задача №2 */
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-  if (isNaN(percent)) {
-    return false;
-  }
+   let totalAmount;
+   let percentTest = Number(percent);
+   let contributionTest = Number(contribution);
+   let amountTest = Number(amount);
+       if (percentTest != Number(percent)){
+           return false ;	
+   } else if (contributionTest != Number(contribution)){
+          return false; 
+   } else if (amountTest != Number(amount)){
+          return false; 
+   }
+     else {
+         let P = ((percent / 12) / 100);
+         let S = amount - contribution;
+         let payment = S * (P + (P / (((1 + P) ** countMonths) - 1)));
 
-  if (isNaN(contribution)) {
-    return false;
-  }
+         return Number(parseFloat(payment * countMonths).toFixed(2))
+      };
+     }
 
-  if (isNaN(amount)) {
-    return false;
-  }
-
-  let monthlyPercentage = ((percent/100)/12);
-  let loanBody = (amount-contribution);
-  let montlyPayment = (loanBody*(monthlyPercentage+(monthlyPercentage/(((1+monthlyPercentage)**countMonths)-1))));
-  let totalAmount = (montlyPayment*countMonths);
-
-  return +(totalAmount.toFixed(2));
-}
-    
-console.log(calculateTotalMortgage(10, 0, 50000, 12));
+console.log(calculateTotalMortgage(10, 0, 50000, 12)) 
