@@ -8,7 +8,7 @@ function solveEquation(a, b, c) {
   if(D < 0)
   return arr = [];
 if(D == 0)
-      arr = (-b + Math.sqrt(D)) / (2 * a);
+      arr.push((-b + Math.sqrt(D)) / (2 * a));
   else if(D > 0){
       let tmp = [];
       tmp.push((-b + Math.sqrt(D)) / (2 * a));
@@ -33,12 +33,14 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 
     let x = Math.pow(1+P, countMonths);
     let monthPayment = S *(P + (P/(x-1)));
-
+   
+    
   // Расчитываем общую сумму платежа и округляем до 2х знаков
 
     let totalPayment = (monthPayment*countMonths).toFixed(2);
 
-     return  totalPayment;
+
+     return  parseFloat(totalPayment);
 }
 
 console.log(calculateTotalMortgagen(10,0,5000,12));
