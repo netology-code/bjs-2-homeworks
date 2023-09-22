@@ -44,6 +44,17 @@ describe('Домашнее задание к лекции 7 «Асинхронн
     expect(clock.intervalId).toBeNull();
   });
 
+  it('будильник должен удалять звонки и интервал при очистке звонков', () => {
+    const callback = f => f;
+    clock.addClock("16:45", callback);
+    expect(clock.alarmCollection.length).toEqual(1);
+    clock.start();
+    expect(clock.intervalId).toBeDefined();
+    clock.clearAlarms();
+    expect(clock.intervalId).toBeNull();
+    expect(clock.alarmCollection.length).toEqual(0);
+  });
+
   it('будильник не должен несколько интервалов', () => {
     clock.start();
     const intervalId = clock.intervalId;
