@@ -55,11 +55,10 @@
 ## Решение задач
 1. Откройте файл `task.js` в вашем редакторе кода и выполните задание. <br>
 2. Проверьте соблюдение [кодстайла](https://github.com/netology-code/codestyle/tree/master/js#%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-javascript-%D0%BA%D0%BE%D0%B4%D0%B0). Форматируйте ваш код через форматтер https://codebeautify.org/jsviewer.
-3. Вы можете написать функцию `testCase` для проверки вашей работы. <br>
-4. Добавьте файл `task.js` в индекс `git` с помощью команды `git add %file-path%`, где `%file-path%` — путь до целевого файла `git add ./1.base-concepts/task.js`. <br>
-5. Сделайте коммит, используя команду `git commit -m '%comment%'`, где `%comment%`, — это произвольный комментарий к вашему коммиту `git commit -m 'Первое задание полностью готово'`. <br>
-6. Опубликуйте код в репозиторий `homeworks` с помощью команды `git push -u origin main`.<br>
-7. На проверку пришлите 2 ссылки. На файл с решением (`task.js`) и на страницу GitHub Pages — страницу с автотестами: `https://%USERNAME%.github.io/bjs-2-homeworks/1.base-concepts`.
+3. Добавьте файл `task.js` в индекс `git` с помощью команды `git add %file-path%`, где `%file-path%` — путь до целевого файла `git add ./1.base-concepts/task.js`. <br>
+4. Сделайте коммит, используя команду `git commit -m '%comment%'`, где `%comment%`, — это произвольный комментарий к вашему коммиту `git commit -m 'Первое задание полностью готово'`. <br>
+5. Опубликуйте код в репозиторий `homeworks` с помощью команды `git push -u origin main`.<br>
+6. На проверку пришлите 2 ссылки. На файл с решением (`task.js`) и на страницу GitHub Pages — страницу с автотестами: `https://%USERNAME%.github.io/bjs-2-homeworks/1.base-concepts`.
 
 
 **_Никакие файлы прикреплять не нужно._**
