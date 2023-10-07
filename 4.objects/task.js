@@ -11,7 +11,7 @@ Student.prototype.setSubject = function (subjectName) {
 
 Student.prototype.addMarks = function (...marks) {
   if (this.marks) {
-    marks.forEach(item => this.marks.push(item));
+    this.marks.push(...marks)
   }
 }
 
@@ -23,9 +23,9 @@ Student.prototype.getAverage = function () {
 }
 
 Student.prototype.exclude = function (reason) {
-  if (delete this.subject && delete this.marks) {
-    this.excluded = reason;
-  }
+  delete this.subject;
+  delete this.marks;
+  this.excluded = reason;
 }
 
 let student1 = new Student("Василиса", "женский", 19);
