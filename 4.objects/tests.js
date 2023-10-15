@@ -22,11 +22,14 @@ describe("Домашнее задание к занятию 4 «Объекты»
     
     expect(student.marks).toEqual([]);
 
-    student.addMarks(5, 4, 5);
-    expect(student.marks).toEqual([5, 4, 5]);
+    student.addMarks(5);
+    expect(student.marks).toEqual([5]);
 
-    student.addMarks(5, 4, 5);
-    expect(student.marks).toEqual([5, 4, 5, 5, 4, 5]);
+    student.addMarks(4, 4);
+    expect(student.marks).toEqual([5, 4, 4]);
+
+    student.addMarks(3, 3, 4, 5);
+    expect(student.marks).toEqual([5, 4, 4, 3, 3, 4, 5]);
   });
 
   it("Вычисление среднего работает корректно", () => {
