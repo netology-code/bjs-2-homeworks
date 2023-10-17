@@ -36,7 +36,7 @@ class Magazine extends PrintEditionItem {
 }
 
 class Book extends PrintEditionItem {
-  constructor(name, releaseDate, pagesCount, author) {
+  constructor(author, name, releaseDate, pagesCount) {
     super(name, releaseDate, pagesCount);
     this.type = 'book';
     this.author = author;
@@ -45,25 +45,24 @@ class Book extends PrintEditionItem {
 
 class NovelBook extends Book {
   constructor(author, name, releaseDate, pagesCount){
-    super(name, releaseDate, pagesCount, author);
+    super(author, name, releaseDate, pagesCount);
     this.type = 'novel';
   }
 }
 
 class FantasticBook extends Book {
   constructor(author, name, releaseDate, pagesCount){
-    super(name, releaseDate, pagesCount, author);
+    super(author, name, releaseDate, pagesCount);
     this.type = 'fantastic';
   }
 }
 
 class DetectiveBook extends Book {
   constructor(author, name, releaseDate, pagesCount){
-    super(name, releaseDate, pagesCount, author);
+    super(author, name, releaseDate, pagesCount);
     this.type = 'detective';
   }
 }
-
 
 class Library {
   constructor(name) {
@@ -93,6 +92,43 @@ class Library {
       return book;
     }
     return null;
+  }
+}
+
+class Student {
+  constructor(name) {
+    this.name = name;
+    this.marks = {};
+  }
+
+  addMark(mark, subject) {
+    if (mark < 2 || mark > 5) {
+      return;
+    }
+
+    if (this.marks[subject]) {
+      this.marks[subject].push(mark);
+    } else {
+      this.marks[subject] = [mark];
+    }
+  }
+
+  getAverageBySubject(subject) {
+    if (!this.marks[subject]) {
+      console.log('По предмету ' + subject + ' оценок нет');
+      return 0;
+    }
+    const subjectSumm = this.marks[subject].reduce((summ, mark) => summ + mark, 0);
+    console.log('Средняя оценка по предмету ' + subject + ' = ' + (subjectSumm / this.marks[subject].length));
+    return subjectSumm / this.marks[subject].length;
+  }
+
+  getAverage() {
+    const allKeys = Object.keys(this.marks);
+    if (allKeys.length === 0) {
+      return 0;
+    }
+    return allKeys.reduce((sum, key) => sum + this.getAverageBySubject(key), 0) / allKeys.length;
   }
 }
 
@@ -127,6 +163,7 @@ console.log(picknick.state); //15
 console.log("=======================================");
 
 console.log(" ");
+console.log("=======================================");
 console.log("ЗАДАЧА 2");
 const library = new Library("Библиотека имени Ленина");
 
@@ -155,3 +192,19 @@ console.log(library.findBookBy("releaseDate", 1924).name); //"Мурзилка"
 console.log("Количество книг до выдачи: " + library.books.length); //Количество книг до выдачи: 4
 library.giveBookByName("Машина времени");
 console.log("Количество книг после выдачи: " + library.books.length); //Количество книг после выдачи: 3
+
+console.log("=======================================");
+
+console.log(" ");
+console.log("=======================================");
+console.log("ЗАДАЧА 3");
+
+const student = new Student("Олег Никифоров");
+student.addMark(5, "химия");
+student.addMark(5, "химия");
+student.addMark(5, "физика");
+student.addMark(4, "физика");
+student.addMark(6, "физика"); // Оценка не добавится, так как больше 5
+student.getAverageBySubject("физика"); // Средний балл по предмету физика 4.5
+student.getAverageBySubject("биология"); // Вернёт 0, так как по такому предмету нет никаких оценок.
+student.getAverage(); // Средний балл по всем предметам 4.75
