@@ -77,11 +77,8 @@ class Library {
   }
 
   findBookBy(type, value) {
-    let bookIndex = this.books.findIndex(book => book[type] === value);
-    if (bookIndex !== -1) {
-      return this.books[bookIndex];
-    }
-    return null;
+    const bookFinded = this.books.find(book => book[type] === value);
+    return bookFinded || null;
   }
 
   giveBookByName(bookName) {
