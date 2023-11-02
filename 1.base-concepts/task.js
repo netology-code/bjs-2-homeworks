@@ -35,4 +35,4 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
   const totalPayment = monthlyPayment * countMonths;
 
   return parseFloat(totalPayment.toFixed(2)); // Округляем до двух знаков после запятой
-}
+} 
