@@ -17,11 +17,11 @@ function solveEquation(a, b, c) {
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	percent = percent / 100 / 12; // преобразование процентной ставки
 	const loanBody = amount - contribution; // тело кредита
-	const monthlyPayment = loanBody * (percent + (percent / (((1 + percent) ** countMonths) - 1))) // ежемесячная оплата
+	const monthlyPayment = loanBody * (percent + (percent / (((1 + percent) ** countMonths) - 1))); // ежемесячная оплата
 	const totalAmount = monthlyPayment * countMonths; // общая сумма
 	const roundingTotalAmount = totalAmount.toFixed(2); // округление до 2 знаков после запятой
-	return roundingTotalAmount;
+	return parseFloat(roundingTotalAmount);
 }
 
-const result = calculateTotalMortgage(10, 0, 50000, 12);
-console.log('Общая сумма выплат: ' + result);
+const result = calculateTotalMortgage(10, 20000, 20000, 24);
+console.log(result);
