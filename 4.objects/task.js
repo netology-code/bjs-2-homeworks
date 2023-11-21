@@ -48,3 +48,4 @@ function Student(name, gender, age) {
   student2.setSubject("Geometry");
   student2.exclude('плохая учёба');
   console.log(student2);
+  пш
