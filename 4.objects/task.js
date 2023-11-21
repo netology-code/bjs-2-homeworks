@@ -1,4 +1,3 @@
-// Шаг 1: Создаем функцию-конструктор Student
 function Student(name, gender, age) {
     this.name = name;
     this.gender = gender;
@@ -6,12 +5,10 @@ function Student(name, gender, age) {
     this.marks = [];
   }
   
-  // Шаг 2: Добавляем метод setSubject к прототипу Student
   Student.prototype.setSubject = function(subjectName) {
     this.subject = subjectName;
   };
   
-  // Шаг 3: Добавляем метод addMarks к прототипу Student
   Student.prototype.addMarks = function(...marksToAdd) {
     if (!this.marks) {
       console.log(`${this.name} отчислен(а) и не может получать оценки.`);
@@ -20,7 +17,6 @@ function Student(name, gender, age) {
     this.marks = this.marks.concat(marksToAdd);
   };
   
-  // Шаг 4: Добавляем метод getAverage к прототипу Student
   Student.prototype.getAverage = function() {
     if (!this.marks || this.marks.length === 0) {
       return 0;
@@ -29,14 +25,12 @@ function Student(name, gender, age) {
     return sum / this.marks.length;
   };
   
-  // Шаг 5: Добавляем метод exclude к прототипу Student
   Student.prototype.exclude = function(reason) {
     delete this.subject;
     delete this.marks;
     this.excluded = reason;
   };
   
-  // Пример использования
   let student1 = new Student("Василиса", "женский", 19);
   student1.setSubject("Algebra");
   console.log(student1.getAverage()); // 0
