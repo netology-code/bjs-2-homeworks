@@ -62,19 +62,6 @@ class PrintEditionItem {
     }
   }
   
-  // Пример использования
-  
-  const sherlock = new PrintEditionItem(
-    "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
-    2019,
-    1008
-  );
-  
-  console.log(sherlock.releaseDate); // 2019
-  console.log(sherlock.state); // 100
-  sherlock.fix();
-  console.log(sherlock.state); // 150
-  
   const picknick = new FantasticBook(
     "Аркадий и Борис Стругацкие",
     "Пикник на обочине",
@@ -120,46 +107,6 @@ class PrintEditionItem {
       return null;
     }
   }
-  
-  // Пример использования
-  
-  const library = new Library("Библиотека имени Ленина");
-  
-  library.addBook(
-    new DetectiveBook(
-      "Артур Конан Дойл",
-      "Полное собрание повестей и рассказов о Шерлоке Холмсе в одном томе",
-      2019,
-      1008
-    )
-  );
-  library.addBook(
-    new FantasticBook(
-      "Аркадий и Борис Стругацкие",
-      "Пикник на обочине",
-      1972,
-      168
-    )
-  );
-  library.addBook(new NovelBook("Герберт Уэллс", "Машина времени", 1895, 138));
-  library.addBook(new Magazine("Мурзилка", 1924, 60));
-  
-  console.log(library.findBookBy("name", "Властелин колец")); // null
-  console.log(library.findBookBy("releaseDate", 1924).name); // "Мурзилка"
-  
-  console.log("Количество книг до выдачи: " + library.books.length); // Количество книг до выдачи: 4
-  const givenBook = library.giveBookByName("Машина времени");
-  console.log("Выданная книга: ", givenBook);
-  console.log("Количество книг после выдачи: " + library.books.length); // Количество книг после выдачи: 3
-  
-  givenBook.state = 20;
-  console.log("Состояние книги после повреждения: " + givenBook.state); // Состояние книги после повреждения: 20
-  
-  givenBook.fix();
-  console.log("Состояние книги после восстановления: " + givenBook.state); // Состояние книги после восстановления: 30
-  
-  library.addBook(givenBook);
-  console.log("Количество книг после возвращения: " + library.books.length); // Количество книг после возвращения: 4
   
   class Student {
     constructor(name) {
