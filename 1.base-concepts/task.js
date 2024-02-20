@@ -6,7 +6,7 @@ function solveEquation(a, b, c) {
   let d = b**2 - 4 * a * c;
   if (d < 0) {
     return arr;
-  } else if (equation === 0) {
+  } else if (d === 0) {
     let root = -b / (2 * a);
     arr.push(root);
     return arr;
