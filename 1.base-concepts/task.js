@@ -8,14 +8,12 @@ function solveEquation(a, b, c) {
 		let x1 = (-b + Math.sqrt(d)) / (2 * a);
 		let x2 = (-b - Math.sqrt(d)) / (2 * a);
 		arr.push(x1, x2);
-		return arr;
 	} else if (d === 0) {
 		let x = -b / (2 * a);
 		arr.push(x);
-		return arr;
-	} else {
-		return arr;
-	}
+	} 
+    
+	return arr;
 }
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
