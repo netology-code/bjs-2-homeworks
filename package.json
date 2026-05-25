@@ -1,0 +1,21 @@
+{
+  "name": "bjs-2-homeworks",
+  "version": "1.0.0",
+  "description": "0. [Основы отладки](./0.debugger/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Natalia-Gerbeeva/bjs-2-homeworks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Natalia-Gerbeeva/bjs-2-homeworks/issues"
+  },
+  "homepage": "https://github.com/Natalia-Gerbeeva/bjs-2-homeworks#readme"
+}
