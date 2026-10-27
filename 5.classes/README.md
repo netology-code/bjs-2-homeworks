@@ -204,7 +204,7 @@ student.getAverage(); // Средний балл по всем предмета�
 3. Добавьте файл `task.js` в индекс `git` с помощью команды `git add %file-path%`, где `%file-path%` — путь до целевого файла `git add ./5.classes/task.js`. <br>
 4. Сделайте коммит, используя команду `git commit -m '%comment%'`, где `%comment%` — это произвольный комментарий к вашему коммиту `git commit -m 'Пятое задание полностью готово'`. <br>
 5. Опубликуйте код в репозиторий `homeworks` с помощью команды `git push -u origin main`.<br>
-6. На проверку пришлите 2 ссылки. На файл с решением (`task.js`) и на страницу GitHub Pages — страницу с автотестами: `https://%USERNAME%.github.io/bjs-2-homeworks/5.classes`.
+6. Отправьте 2 ссылки. На файл с решением (`task.js`) и на страницу GitHub Pages — страницу с автотестами: `https://%USERNAME%.github.io/bjs-2-homeworks/5.classes`.
 
 **_Никакие файлы прикреплять не нужно._**
 
